@@ -20,11 +20,16 @@ class MainViewModel : ObservableObject {
     
     //MARK: service call
     init(){
-        #if DEBUG
-        txtUsername = "user"
-        txtEmail = "something2@gmail.com"
-        txtPassword = "111111"
-        #endif
+        if (Utils.UDValueBool(key: Globs.userLogin)){
+            setUserData(uDict: Utils.UDValue(key: Globs.userLogin) as? NSDictionary ?? [:])
+        }else{
+            
+        }
+//        #if DEBUG
+//        txtUsername = "user"
+//        txtEmail = "something2@gmail.com"
+//        txtPassword = "111111"
+//        #endif
     }
     
     func serviceCallLogin(){

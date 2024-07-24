@@ -13,4 +13,32 @@ extension String {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegex)
         return emailTest.evaluate(with:self)
     }
+    
+    func stringDatetodate(format:String = "yyyy-MM-dd'T'HH:mm:ss.SSSZ") -> Date? {
+        let dateformat = DateFormatter()
+        dateformat.dateFormat = format
+        return dateformat.date(from: self)
+    }
+    
+    func stringDateChangeFormat(format:String,newFormat:String) -> String {
+        let dateformat = DateFormatter()
+        dateformat.dateFormat = format
+        if let dt = dateformat.date(from: self){
+            dateformat.dateFormat = newFormat
+            return dateformat.string(from: dt)
+        }else{
+            return ""
+        }
+    }
 }
+
+
+extension Date {
+    func displayDate(format:String,addMinTime:Int = 0)->String{
+        let dateformat = DateFormatter()
+        dateformat.dateFormat = format
+        let date = self.addingTimeInterval(TimeInterval(60*addMinTime))
+        return dateformat.string(from: date)
+    }
+}
+
