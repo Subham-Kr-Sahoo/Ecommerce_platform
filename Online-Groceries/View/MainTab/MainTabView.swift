@@ -11,7 +11,7 @@ struct MainTabView: View {
     @StateObject var homeVM = HomeViewModel.shared
     var body: some View {
         VStack{
-            TabView(selection:$homeVM.selectedTab){
+            TabView(selection:$homeVM.selectTab){
                 HomeView().tag(0)
                 ExploreView().tag(1)
                 ExploreView().tag(2)
@@ -21,47 +21,47 @@ struct MainTabView: View {
                 UIScrollView.appearance().isScrollEnabled = false
             }
             .tabViewStyle(.page(indexDisplayMode:.never))
-            .onChange(of: homeVM.selectedTab) {newValue in
+            .onChange(of: homeVM.selectTab) {newValue in
                 debugPrint("\(newValue)")
             }
             HStack{
                 // MARK: home view
-                TabButton(title: "Store",icon: "house",isSelect: homeVM.selectedTab == 0) {
+                TabButton(title: "Store",icon: "house",isSelect: homeVM.selectTab == 0) {
                     DispatchQueue.main.async {
                         withAnimation{
-                            homeVM.selectedTab = 0
+                            homeVM.selectTab = 0
                         }
                     }
                 }
                 // MARK: explore view
-                TabButton(title: "Explore",icon: "magnifyingglass",isSelect: homeVM.selectedTab == 1) {
+                TabButton(title: "Explore",icon: "magnifyingglass",isSelect: homeVM.selectTab == 1) {
                     DispatchQueue.main.async {
                         withAnimation{
-                            homeVM.selectedTab = 1
+                            homeVM.selectTab = 1
                         }
                     }
                 }
                 // MARK: favourite view
-                TabButton(title: "Favourite",icon: "heart",isSelect: homeVM.selectedTab == 2) {
+                TabButton(title: "Favourite",icon: "heart",isSelect: homeVM.selectTab == 2) {
                     DispatchQueue.main.async {
                         withAnimation{
-                            homeVM.selectedTab = 2
+                            homeVM.selectTab = 2
                         }
                     }
                 }
                 // MARK: cart view
-                TabButton(title: "Cart",icon: "cart",isSelect: homeVM.selectedTab == 3) {
+                TabButton(title: "Cart",icon: "cart",isSelect: homeVM.selectTab == 3) {
                     DispatchQueue.main.async {
                         withAnimation{
-                            homeVM.selectedTab = 3
+                            homeVM.selectTab = 3
                         }
                     }
                 }
                 // MARK: account view
-                TabButton(title: "Account",icon: "person.crop.square",isSelect: homeVM.selectedTab == 4) {
+                TabButton(title: "Account",icon: "person.crop.square",isSelect: homeVM.selectTab == 4) {
                     DispatchQueue.main.async {
                         withAnimation{
-                            homeVM.selectedTab = 4
+                            homeVM.selectTab = 4
                         }
                     }
                 }

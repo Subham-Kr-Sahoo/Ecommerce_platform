@@ -43,6 +43,15 @@
 		91519A372C5137AD00F8227B /* ProductCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91519A362C5137AD00F8227B /* ProductCellView.swift */; };
 		91519A392C5155BC00F8227B /* CategoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91519A382C5155BB00F8227B /* CategoryCellView.swift */; };
 		91519A3B2C51648E00F8227B /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91519A3A2C51648E00F8227B /* ProductModel.swift */; };
+		91519A3D2C517ADF00F8227B /* TypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91519A3C2C517ADF00F8227B /* TypeModel.swift */; };
+		91519A412C51898900F8227B /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 91519A402C51898900F8227B /* SDWebImageSwiftUI */; };
+		91519A432C591DD700F8227B /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91519A422C591DD700F8227B /* ProductDetailView.swift */; };
+		91519A452C591EE400F8227B /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91519A442C591EE400F8227B /* ProductDetailViewModel.swift */; };
+		91519A472C59201D00F8227B /* NutritionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91519A462C59201D00F8227B /* NutritionModel.swift */; };
+		91519A492C59213000F8227B /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91519A482C59213000F8227B /* ImageModel.swift */; };
+		91519A4B2C5A8F8600F8227B /* TermsofServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91519A4A2C5A8F8600F8227B /* TermsofServiceView.swift */; };
+		91519A4D2C5A8FAA00F8227B /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91519A4C2C5A8FAA00F8227B /* PrivacyPolicyView.swift */; };
+		91519A4F2C5AB02200F8227B /* MonthYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91519A4E2C5AB02200F8227B /* MonthYearView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +111,14 @@
 		91519A362C5137AD00F8227B /* ProductCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellView.swift; sourceTree = "<group>"; };
 		91519A382C5155BB00F8227B /* CategoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellView.swift; sourceTree = "<group>"; };
 		91519A3A2C51648E00F8227B /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		91519A3C2C517ADF00F8227B /* TypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeModel.swift; sourceTree = "<group>"; };
+		91519A422C591DD700F8227B /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		91519A442C591EE400F8227B /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
+		91519A462C59201D00F8227B /* NutritionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModel.swift; sourceTree = "<group>"; };
+		91519A482C59213000F8227B /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		91519A4A2C5A8F8600F8227B /* TermsofServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsofServiceView.swift; sourceTree = "<group>"; };
+		91519A4C2C5A8FAA00F8227B /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		91519A4E2C5AB02200F8227B /* MonthYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYearView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91519A412C51898900F8227B /* SDWebImageSwiftUI in Frameworks */,
 				914686092C22B6E2003755C2 /* CountryPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,6 +237,9 @@
 				91519A342C51320400F8227B /* SectionTitleView.swift */,
 				91519A362C5137AD00F8227B /* ProductCellView.swift */,
 				91519A382C5155BB00F8227B /* CategoryCellView.swift */,
+				91519A4E2C5AB02200F8227B /* MonthYearView.swift */,
+				91519A4A2C5A8F8600F8227B /* TermsofServiceView.swift */,
+				91519A4C2C5A8FAA00F8227B /* PrivacyPolicyView.swift */,
 			);
 			path = UICommon;
 			sourceTree = "<group>";
@@ -228,6 +249,7 @@
 			children = (
 				914686102C22D349003755C2 /* MainViewModel.swift */,
 				91519A242C4FF9F700F8227B /* HomeViewModel.swift */,
+				91519A442C591EE400F8227B /* ProductDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -237,6 +259,9 @@
 			children = (
 				91519A1F2C4FD2F400F8227B /* UserModel.swift */,
 				91519A3A2C51648E00F8227B /* ProductModel.swift */,
+				91519A3C2C517ADF00F8227B /* TypeModel.swift */,
+				91519A462C59201D00F8227B /* NutritionModel.swift */,
+				91519A482C59213000F8227B /* ImageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -283,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				91519A272C4FFB2700F8227B /* HomeView.swift */,
+				91519A422C591DD700F8227B /* ProductDetailView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -313,6 +339,7 @@
 			name = "Online-Groceries";
 			packageProductDependencies = (
 				914686082C22B6E2003755C2 /* CountryPicker */,
+				91519A402C51898900F8227B /* SDWebImageSwiftUI */,
 			);
 			productName = "Online-Groceries";
 			productReference = 914685C12C21C155003755C2 /* Online-Groceries.app */;
@@ -388,6 +415,7 @@
 			mainGroup = 914685B82C21C155003755C2;
 			packageReferences = (
 				914686072C22B6E1003755C2 /* XCRemoteSwiftPackageReference "CountryPicker" */,
+				91519A3F2C51898800F8227B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 914685C22C21C155003755C2 /* Products */;
 			projectDirPath = "";
@@ -437,12 +465,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				914685C52C21C155003755C2 /* Online_GroceriesApp.swift in Sources */,
+				91519A492C59213000F8227B /* ImageModel.swift in Sources */,
 				914686132C22D493003755C2 /* LineTextField.swift in Sources */,
+				91519A4B2C5A8F8600F8227B /* TermsofServiceView.swift in Sources */,
 				9146860F2C22BF7F003755C2 /* LoginView.swift in Sources */,
+				91519A452C591EE400F8227B /* ProductDetailViewModel.swift in Sources */,
 				91519A252C4FF9F700F8227B /* HomeViewModel.swift in Sources */,
 				91519A1C2C4EA66800F8227B /* UIExtensions.swift in Sources */,
 				91519A282C4FFB2700F8227B /* HomeView.swift in Sources */,
 				914686172C22FCF8003755C2 /* Globs.swift in Sources */,
+				91519A3D2C517ADF00F8227B /* TypeModel.swift in Sources */,
 				91519A352C51320400F8227B /* SectionTitleView.swift in Sources */,
 				914686022C21CCD6003755C2 /* UIExtension.swift in Sources */,
 				914686062C22A41E003755C2 /* SigninView.swift in Sources */,
@@ -454,13 +486,17 @@
 				91519A332C510A0A00F8227B /* ImageSliderViews.swift in Sources */,
 				91519A2D2C50E73F00F8227B /* TabButton.swift in Sources */,
 				9146860B2C22B70C003755C2 /* CountryPicker.swift in Sources */,
+				91519A4F2C5AB02200F8227B /* MonthYearView.swift in Sources */,
 				914686152C22EE8C003755C2 /* ServiceCall.swift in Sources */,
 				91519A3B2C51648E00F8227B /* ProductModel.swift in Sources */,
 				91519A2F2C50F5FD00F8227B /* SearchTextField.swift in Sources */,
 				914686042C21D752003755C2 /* RoundedButton.swift in Sources */,
 				91519A1E2C4EAF2A00F8227B /* SignupView.swift in Sources */,
+				91519A4D2C5A8FAA00F8227B /* PrivacyPolicyView.swift in Sources */,
 				914686112C22D349003755C2 /* MainViewModel.swift in Sources */,
 				91519A232C4FE6AC00F8227B /* MainTabView.swift in Sources */,
+				91519A432C591DD700F8227B /* ProductDetailView.swift in Sources */,
+				91519A472C59201D00F8227B /* NutritionModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,6 +852,14 @@
 				minimumVersion = 2.0.3;
 			};
 		};
+		91519A3F2C51898800F8227B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -823,6 +867,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 914686072C22B6E1003755C2 /* XCRemoteSwiftPackageReference "CountryPicker" */;
 			productName = CountryPicker;
+		};
+		91519A402C51898900F8227B /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91519A3F2C51898800F8227B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

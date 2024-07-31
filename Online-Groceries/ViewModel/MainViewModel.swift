@@ -16,12 +16,12 @@ class MainViewModel : ObservableObject {
     @Published var showError = false
     @Published var errorMessage : String = ""
     @Published var isUserLogin : Bool = false
-    @Published var userObj : UserModel = UserModel(dict:[:])
+    @Published var userObj : UserModel = UserModel(dict: [:])
     
     //MARK: service call
     init(){
         if (Utils.UDValueBool(key: Globs.userLogin)){
-            setUserData(uDict: Utils.UDValue(key: Globs.userLogin) as? NSDictionary ?? [:])
+            self.setUserData(uDict: Utils.UDValue(key: Globs.userPayload) as? NSDictionary ?? [:])
         }else{
             
         }
@@ -30,6 +30,7 @@ class MainViewModel : ObservableObject {
 //        txtEmail = "something2@gmail.com"
 //        txtPassword = "111111"
 //        #endif
+        
     }
     
     func serviceCallLogin(){
@@ -81,7 +82,7 @@ class MainViewModel : ObservableObject {
             return
         }
         
-        ServiceCall.post(parameter: ["username":txtUsername,"email":txtEmail,"password":txtPassword,"device_token":""], path: Globs.SV_SIGNUP){ responseObj in
+        ServiceCall.post(parameter: ["username":txtUsername,"email":txtEmail,"password":txtPassword,"device_token":""], path: Globs.SV_SIGN_UP){ responseObj in
             if let response = responseObj as? NSDictionary {
                 if response.value(forKey: KKey.status) as? String ?? "" == "1" {
                     

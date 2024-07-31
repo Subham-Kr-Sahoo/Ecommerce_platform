@@ -64,16 +64,27 @@ struct SignupView: View {
                             .font(.customfont(.semibold, fontSize:15))
                             .foregroundStyle(Color.secondaryText)
                             .frame(minWidth: 0,maxWidth: .infinity,alignment: .leading)
-                        HStack{
-                            Text("Terms of Service")
-                                .font(.customfont(.semibold, fontSize:15))
-                                .foregroundStyle(Color(hex: "4ba84a"))
+                        HStack(spacing:4){
+                            NavigationLink{
+                                TermsofServiceView()
+                            }label: {
+                                Text("Terms of Service")
+                                    .font(.customfont(.semibold, fontSize:15))
+                                    .foregroundStyle(Color(hex: "4ba84a"))
+                            }
+                            
+                            
                             Text("and")
                                 .font(.customfont(.semibold, fontSize:15))
                                 .foregroundStyle(Color.secondaryText)
-                            Text("Privacy Policy")
-                                .font(.customfont(.semibold, fontSize:15))
-                                .foregroundStyle(Color(hex: "4ba84a"))
+                            NavigationLink{
+                                PrivacyPolicyView()
+                            }label: {
+                                Text("Privacy Policy")
+                                    .font(.customfont(.semibold, fontSize:15))
+                                    .foregroundStyle(Color(hex: "4ba84a"))
+                            }
+                            
                         }.frame(minWidth: 0,maxWidth: .infinity,alignment: .leading)
                         
                     }

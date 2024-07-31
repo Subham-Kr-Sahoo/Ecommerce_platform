@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct HomeView: View {
     @StateObject var homeVM = HomeViewModel.shared
@@ -45,10 +46,10 @@ struct HomeView: View {
                     
                     ScrollView(.horizontal,showsIndicators: false){
                         LazyHStack(spacing:10){
-                            ForEach(0..<5,id:\.self){index in
-                                ProductCellView{
+                            ForEach(homeVM.offerArr,id: \.id){pObj in
+                                ProductCellView(pObj: pObj,didAddCart: {
                                     
-                                }
+                                })
                             }
                         }.padding(.horizontal,25)
                     }
@@ -60,10 +61,10 @@ struct HomeView: View {
                     
                     ScrollView(.horizontal,showsIndicators: false){
                         LazyHStack(spacing:10){
-                            ForEach(0..<5,id:\.self){index in
-                                ProductCellView{
+                            ForEach(homeVM.bestArr,id: \.id){pObj in
+                                ProductCellView(pObj: pObj,didAddCart: {
                                     
-                                }
+                                })
                             }
                         }.padding(.horizontal,25)
                     }
@@ -72,27 +73,32 @@ struct HomeView: View {
                     SectionTitleView(title: "Groceries",titleall: "See All"){
                         
                     }.padding(.horizontal,10)
-                    
+                    // category
                     ScrollView(.horizontal,showsIndicators: false){
                         LazyHStack(spacing:10){
-                            ForEach(0..<5,id:\.self){index in
-                                CategoryCellView(colour:Color(hex: "F8A44C")){
+                            
+                            ForEach(homeVM.typeArr,id: \.id){
+                                tObj in
+                                
+                                CategoryCellView(tObj: tObj){
                                     
                                 }
+                                
+                            }
+                            
+                            
+                        }.padding(.horizontal,25)
+                    }
+                    // product
+                    ScrollView(.horizontal,showsIndicators: false){
+                        LazyHStack(spacing:10){
+                            ForEach(homeVM.listArr,id: \.id){pObj in
+                                ProductCellView(pObj: pObj,didAddCart: {
+                                    
+                                })
                             }
                         }.padding(.horizontal,25)
                     }
-                    
-                    ScrollView(.horizontal,showsIndicators: false){
-                        LazyHStack(spacing:10){
-                            ForEach(0..<5,id:\.self){index in
-                                ProductCellView{
-                                    
-                                }
-                            }
-                        }.padding(.horizontal,25)
-                    }
-                    
                 }
                 .padding(.top,.topInsets)
             }
