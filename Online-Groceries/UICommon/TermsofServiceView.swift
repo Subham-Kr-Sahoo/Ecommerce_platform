@@ -23,7 +23,7 @@ struct TermsofServiceView: View {
                         MonthYearView()
                     }
                     
-                    SectionView(title:"More Important", content: "This term and condition page from now onwards is copied from blinkit and i did it only for testing purpose i donot want to harm their any things or take credit from their team", bulletPoints: ["Thank you for seeing the page 🫶🏻"],number:1)
+                    SectionView(title:"More Important", content: "This term and condition page from now onwards is copied from blinkit and i did it only for testing purpose i donot want to harm their any things or take credit from their team", bulletPoints: ["Thank you for seeing the page 🫶🏻"],number:1 )
                     
                     SectionView(title: "Acceptance of terms",
                                 content: "Welcome to Necter ('we,' 'our,' or 'us').The terms ‘visitor(s)’, ‘user(s)’, ‘you’, ‘your’, ‘customer(s)’ hereunder refer to the person visiting, accessing, viewing, browsing through and/or using the Necter Platform at any point in time.",
