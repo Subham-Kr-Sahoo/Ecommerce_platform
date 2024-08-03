@@ -28,8 +28,7 @@ struct ProductDetailView: View {
                         .scaledToFit()
                         .frame(width:.screenWidth*0.7,height:.screenWidth*0.7)
                 }
-                .frame(width: .screenWidth,height: .screenWidth)
-                
+                    .frame(width: .screenWidth,height: .screenWidth)
                 //MARK: name,like,number,price
                 VStack{
                     HStack{
@@ -96,7 +95,7 @@ struct ProductDetailView: View {
                     
                     Divider()
                 }
-                .padding(20)
+                    .padding(20)
                 //MARK: product details
                 VStack{
                     HStack{
@@ -179,10 +178,106 @@ struct ProductDetailView: View {
                         }
                     }
                     Divider()
-                        .padding(.top,20)
-                }.padding([.horizontal],20)
+                        .padding(.vertical,10)
+                }
+                    .padding([.horizontal],20)
                 //MARK: nutrition details
-                
+                VStack{
+                    HStack{
+                        Text("Nutritions")
+                            .font(.customfont(.semibold,fontSize:24))
+                            .foregroundStyle(Color.primaryText)
+                            .frame(minWidth:0,maxWidth:.screenWidth,alignment: .leading)
+                        
+                        Text(detailVM.pObj.nutritionWeight)
+                            .font(.customfont(.semibold, fontSize: 12))
+                            .foregroundStyle(Color(hex:"71797E"))
+                            .padding(10)
+                            .background( Color.placeholder.opacity(0.5))
+                            .cornerRadius(5)
+                            .padding(.trailing,20)
+                        
+                        Button{
+                            withAnimation {
+                                detailVM.showNutrition()
+                            }
+                        }label: {
+                            Image(systemName:"chevron.right")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width:20,height:20)
+                                .foregroundStyle(.black)
+                                .rotationEffect(.degrees(detailVM.isShowNutrition ? 90 : 0), anchor: .center)
+                                .animation(.easeInOut(duration:0.2), value: detailVM.isShowNutrition)
+                        }
+                        
+                    }
+                    
+                    if(detailVM.isShowNutrition) {
+                        LazyVStack {
+                            ForEach(detailVM.nutritionArr,id: \.id) {nObj in
+                                HStack{
+                                    Text( nObj.nutrition_name )
+                                        .font(.customfont(.semibold, fontSize: 15))
+                                        .foregroundColor(.secondaryText)
+                                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                    
+                                    Text( nObj.nutritionValue )
+                                        .font(.customfont(.semibold, fontSize: 15))
+                                        .foregroundColor(.primaryText)
+                                }
+                                Divider()
+                            }
+                            .padding(.vertical, 0)
+                        }
+                        .padding(.horizontal, 10)
+                    }
+                    
+                    
+                    Divider()
+                        .padding(.vertical,10)
+                }
+                    .padding(.horizontal, 20)
+                //MARK: Review details
+                VStack{
+                    HStack{
+                        Text("Reviews")
+                            .font(.customfont(.semibold, fontSize: 24))
+                            .foregroundStyle(Color.primaryText)
+                            .frame(minWidth:0,maxWidth:.screenWidth,alignment: .leading)
+                        
+                        HStack(spacing: 2){
+                           ForEach( 1...5 , id: \.self) { index in
+                               Image(systemName:  "star.fill")
+                                   .resizable()
+                                   .scaledToFit()
+                                   .foregroundColor( Color.orange)
+                                   .frame(width: 15, height: 15)
+                           }
+                       }
+                        Button{
+                            withAnimation {
+                                
+                            }
+                        }label: {
+                            Image(systemName:"chevron.right")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width:20,height:20)
+                                .foregroundStyle(.black)
+                                .rotationEffect(.degrees(detailVM.isShowDetail ? 90 : 0), anchor: .center)
+                                .animation(.easeInOut(duration:0.2), value: detailVM.isShowDetail)
+                        }
+                    }
+                    Divider()
+                        .padding(.vertical,10)
+                        
+                }
+                .padding(.horizontal,20)
+                //MARK: Add to basket button
+                RoundedButton(title:"Add to basket"){
+                    
+                }.padding(.horizontal,20)
             }
             //MARK: back button and share button
             VStack{
@@ -224,7 +319,7 @@ struct ProductDetailView: View {
     ProductDetailView(detailVM: ProductDetailViewModel(prodObj: ProductModel(dict: ["offer_price":1,
         "start_date": "2024-07-09T18:30:00.000Z",
         "end_date": "2024-08-09T18:30:00.000Z",
-        "prod_id": 4,
+        "prod_id": 11,
         "cat_id": 1,
         "brand_id": 1,
         "type_id": 1,

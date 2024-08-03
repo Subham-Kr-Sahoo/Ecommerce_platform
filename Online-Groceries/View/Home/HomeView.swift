@@ -103,9 +103,12 @@ struct HomeView: View {
                 .padding(.top,.topInsets)
             }
         }.ignoresSafeArea()
+        .padding(.bottom,35)
     }
 }
 
 #Preview {
-    HomeView()
+    NavigationView {
+        HomeView()
+    }
 }
