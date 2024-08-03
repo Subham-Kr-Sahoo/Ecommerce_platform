@@ -45,7 +45,7 @@ struct FavouriteRowView: View {
                         .foregroundStyle(.black)
                 }
             }
-            if(fObj.offerPrice != nil){
+            if(fObj.offerPrice ?? fObj.price < fObj.price){
                 MarqueeTextView(text:"       Buy Now and Save More during Offer")
             }
             Divider()
