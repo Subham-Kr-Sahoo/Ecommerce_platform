@@ -36,7 +36,7 @@ class ServiceCall {
 
             if(isToken) {
                 #if DEBUG
-                request.addValue("k1oK4K1yQ89KEK5xexrd" , forHTTPHeaderField: "access_token")
+                request.addValue("pM4vMxjKHIiGkx6BDZ0s" , forHTTPHeaderField: "access_token")
                 #else
                 request.addValue(MainViewModel.shared.userObj.authToken , forHTTPHeaderField: "access_token")
                 #endif

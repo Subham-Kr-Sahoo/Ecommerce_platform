@@ -38,7 +38,7 @@ struct ProductDetailView: View {
                             .frame(minWidth:0,maxWidth:.screenWidth,alignment: .leading)
                         Button{
                             withAnimation(.easeInOut){
-                                detailVM.isFav.toggle()
+                                detailVM.serviceCallAddRemoveFav()
                             }
                         }label: {
                             Image(systemName: detailVM.isFav ? "heart.fill" : "heart")
@@ -308,6 +308,11 @@ struct ProductDetailView: View {
                 Spacer()
             }
         }
+        .alert(isPresented: $detailVM.showError, content: {
+            Alert(title: Text(Globs.AppName), 
+                  message:Text(detailVM.errorMessage)
+                  ,dismissButton: .default(Text("Ok")))
+        })
         .navigationTitle("")
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
