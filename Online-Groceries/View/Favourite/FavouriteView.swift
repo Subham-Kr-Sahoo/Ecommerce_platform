@@ -9,7 +9,13 @@ import SwiftUI
 
 struct FavouriteView: View {
     var body: some View {
-        Text("Fav")
+        ZStack{
+            
+        }
+        .navigationTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
+        .ignoresSafeArea()
     }
 }
 

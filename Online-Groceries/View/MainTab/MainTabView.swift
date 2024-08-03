@@ -16,9 +16,9 @@ struct MainTabView: View {
                 }else if(homeVM.selectTab == 1) {
                     ExploreView()
                 }else if(homeVM.selectTab == 2) {
-                    MyCartView()
-                }else if(homeVM.selectTab == 3) {
                     FavouriteView()
+                }else if(homeVM.selectTab == 3) {
+                    MyCartView()
                 }else if(homeVM.selectTab == 4) {
                     AccountView()
                 }
@@ -64,20 +64,18 @@ struct MainTabView: View {
                                 homeVM.selectTab = 4
                             }
                         }
-                    }
+                    }.padding(.trailing,6+4)
                 }
-                .padding(.top)
-                .padding(.bottom,.bottomInsets-5*3)
-                .padding(.horizontal)
+                .frame(width:.screenWidth,height:40)
+                .padding(.vertical,.bottomInsets-10)
                 .background(.white)
                 .cornerRadius(100)
                 .shadow(color: .black.opacity(0.2), radius: 10)
             }
-             .padding(.vertical,6)
              .ignoresSafeArea()
              .navigationTitle("")
              .navigationBarBackButtonHidden(true)
-         .navigationBarHidden(true)
+             .navigationBarHidden(true)
         }
     }
 }

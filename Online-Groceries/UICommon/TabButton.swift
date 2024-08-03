@@ -14,7 +14,6 @@ struct TabButton: View {
     var didSelect : (()->())
     var body: some View {
         Button{
-            print("Tab Button Tap")
             didSelect()
         }label: {
             VStack{

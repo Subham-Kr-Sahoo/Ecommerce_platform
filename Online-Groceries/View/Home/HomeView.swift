@@ -103,7 +103,7 @@ struct HomeView: View {
                 .padding(.top,.topInsets)
             }
         }.ignoresSafeArea()
-        .padding(.bottom,35)
+        .padding(.bottom,70)
     }
 }
 
