@@ -18,7 +18,8 @@ struct FavouriteView: View {
                         FavouriteRowView(fObj: fObj)
                     }
                 }.padding(20)
-            }.padding(.top,.topInsets+40)
+            }.padding(.top,.topInsets+30)
+            .padding(.bottom,.bottomInsets)
             VStack{
                 HStack{
                     Spacer()
@@ -31,6 +32,12 @@ struct FavouriteView: View {
                 .background(Color.white)
                 .shadow(color: .black.opacity(0.1), radius:30)
                 Spacer()
+                
+                RoundedButton(title:"Add to Cart"){
+                    
+                }
+                    .padding(.horizontal,20)
+                    .padding(.bottom,.bottomInsets+80)
             }
         }
         .onAppear{

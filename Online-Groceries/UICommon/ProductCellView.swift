@@ -35,7 +35,7 @@ struct ProductCellView: View {
                         .frame(minWidth:0,maxWidth:.infinity,alignment: .leading)
                     
                     HStack{
-                        if((pObj.offerPrice) != nil){
+                        if(pObj.offerPrice ?? pObj.price < pObj.price){
                             VStack{
                                 Text("₹"+"\(pObj.offerPrice ?? pObj.price)")
                                     
