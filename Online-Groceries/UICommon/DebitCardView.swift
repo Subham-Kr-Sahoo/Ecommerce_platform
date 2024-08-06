@@ -18,7 +18,7 @@ struct DebitCardView: View {
             Rectangle()
                 .cornerRadius(20)
                 .frame(width:.screenWidth-60,height:.screenHeight/4)
-            HStack {
+            HStack{
                 VStack{
                     HStack(alignment:.center){
                         Text("**** **** ****")
