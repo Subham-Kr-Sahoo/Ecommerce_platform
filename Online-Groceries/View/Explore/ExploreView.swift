@@ -27,7 +27,7 @@ struct ExploreView: View {
                 .padding(.top,.topInsets)
                 .background(Color.white)
                 .shadow(color: .black.opacity(0.1), radius:30)
-                
+                //MARK: custom search bar 
                 HStack(alignment: .center) {
                     Image(systemName: "magnifyingglass")
                         .resizable()

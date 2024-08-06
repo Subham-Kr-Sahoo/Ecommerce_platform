@@ -48,7 +48,10 @@ struct HomeView: View {
                         LazyHStack(spacing:10){
                             ForEach(homeVM.offerArr,id: \.id){pObj in
                                 ProductCellView(pObj: pObj,didAddCart: {
-                                    
+                                    CartViewModel.shared.serviceCallAddToCart(prodId: pObj.prodId, qty: 1) { isDone, message in
+                                        self.homeVM.showError = true
+                                        self.homeVM.errorMessage = message
+                                    }
                                 })
                             }
                         }.padding(.horizontal,25)
@@ -63,7 +66,10 @@ struct HomeView: View {
                         LazyHStack(spacing:10){
                             ForEach(homeVM.bestArr,id: \.id){pObj in
                                 ProductCellView(pObj: pObj,didAddCart: {
-                                    
+                                    CartViewModel.shared.serviceCallAddToCart(prodId: pObj.prodId, qty: 1) { isDone, message in
+                                        self.homeVM.showError = true
+                                        self.homeVM.errorMessage = message
+                                    }
                                 })
                             }
                         }.padding(.horizontal,25)
@@ -94,7 +100,10 @@ struct HomeView: View {
                         LazyHStack(spacing:10){
                             ForEach(homeVM.listArr,id: \.id){pObj in
                                 ProductCellView(pObj: pObj,didAddCart: {
-                                    
+                                    CartViewModel.shared.serviceCallAddToCart(prodId: pObj.prodId, qty: 1) { isDone, message in
+                                        self.homeVM.showError = true
+                                        self.homeVM.errorMessage = message
+                                    }
                                 })
                             }
                         }.padding(.horizontal,25)
@@ -102,8 +111,11 @@ struct HomeView: View {
                 }
                 .padding(.top,.topInsets)
             }
-        }.ignoresSafeArea()
-            .padding(.bottom,.bottomInsets+40)
+        }.alert(isPresented: $homeVM.showError, content: {
+            Alert(title: Text(Globs.AppName), message: Text(homeVM.errorMessage), dismissButton: .default(Text("OK")) )
+        })
+        .ignoresSafeArea()
+         .padding(.bottom,.bottomInsets+25)
     }
 }
 

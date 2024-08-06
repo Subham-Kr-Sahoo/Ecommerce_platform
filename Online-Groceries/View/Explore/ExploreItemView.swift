@@ -47,7 +47,10 @@ struct ExploreItemView: View {
                     LazyVGrid(columns:columns,spacing:15){
                         ForEach(itemsVM.listArr,id:\.id){obj in
                             ProductCellView(pObj: obj){
-                                
+                                CartViewModel.shared.serviceCallAddToCart(prodId: obj.prodId, qty: 1) { isDone, message in
+                                    self.itemsVM.showError = true
+                                    self.itemsVM.errorMessage = message
+                                }
                             }
                         }
                     }
@@ -55,11 +58,14 @@ struct ExploreItemView: View {
                Spacer()
            }
         }
+        .alert(isPresented: $itemsVM.showError, content: {
+                    Alert(title: Text(Globs.AppName), message: Text(itemsVM.errorMessage), dismissButton: .default(Text("OK")))})
         .padding(.horizontal)
         .navigationTitle("")
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
         .ignoresSafeArea()
+        
     }
 }
 

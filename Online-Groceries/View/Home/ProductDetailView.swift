@@ -276,7 +276,11 @@ struct ProductDetailView: View {
                 .padding(.horizontal,20)
                 //MARK: Add to basket button
                 RoundedButton(title:"Add to basket"){
-                    
+                    CartViewModel.shared.serviceCallAddToCart(prodId:detailVM.pObj.prodId,qty: detailVM.qty) { isDone, message in
+                        detailVM.qty = 1
+                        self.detailVM.showError = true
+                        self.detailVM.errorMessage = message
+                    }
                 }.padding(.horizontal,20)
             }
             //MARK: back button and share button
@@ -308,6 +312,7 @@ struct ProductDetailView: View {
                 Spacer()
             }
         }
+        .padding(.bottom,30)
         .alert(isPresented: $detailVM.showError, content: {
             Alert(title: Text(Globs.AppName), 
                   message:Text(detailVM.errorMessage)
