@@ -72,17 +72,11 @@ struct DebitCardView: View {
                     
                     Spacer()
                     
-                    if #available(iOS 16.0, *) {
-                        Text(type)
-                            .textCase(.uppercase)
-                            .italic()
-                            .foregroundStyle(.white)
-                            .kerning(1)
-                    } else {
-                        Text(type)
-                            .textCase(.uppercase)
-                            .foregroundStyle(.white)
-                    }
+                    Text(type)
+                        .kerning(1)
+                        .italic()
+                        .textCase(.uppercase)
+                        .foregroundStyle(.white)
                     
                 }
                 .frame(width:60)
