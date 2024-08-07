@@ -61,6 +61,9 @@
 		91519A622C5ECDF900F8227B /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91519A612C5ECDF900F8227B /* ExploreViewModel.swift */; };
 		91519A642C5ECF2200F8227B /* ExploreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91519A632C5ECF2200F8227B /* ExploreModel.swift */; };
 		91519A662C5ED2C900F8227B /* ExploreCategoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91519A652C5ED2C900F8227B /* ExploreCategoryCellView.swift */; };
+		9174FD422C63F359004B0011 /* AccountRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174FD412C63F359004B0011 /* AccountRowView.swift */; };
+		9174FD442C63FA5F004B0011 /* UserNameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174FD432C63FA5F004B0011 /* UserNameModel.swift */; };
+		9174FD462C63FAEB004B0011 /* UserNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174FD452C63FAEB004B0011 /* UserNameViewModel.swift */; };
 		91DD964D2C5FEE23005528F5 /* ExploreItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DD964C2C5FEE23005528F5 /* ExploreItemViewModel.swift */; };
 		91DD964F2C5FF0ED005528F5 /* ExploreItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DD964E2C5FF0ED005528F5 /* ExploreItemView.swift */; };
 		91DD96512C60182F005528F5 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DD96502C60182F005528F5 /* CartViewModel.swift */; };
@@ -146,6 +149,9 @@
 		91519A612C5ECDF900F8227B /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		91519A632C5ECF2200F8227B /* ExploreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreModel.swift; sourceTree = "<group>"; };
 		91519A652C5ED2C900F8227B /* ExploreCategoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCategoryCellView.swift; sourceTree = "<group>"; };
+		9174FD412C63F359004B0011 /* AccountRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRowView.swift; sourceTree = "<group>"; };
+		9174FD432C63FA5F004B0011 /* UserNameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameModel.swift; sourceTree = "<group>"; };
+		9174FD452C63FAEB004B0011 /* UserNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameViewModel.swift; sourceTree = "<group>"; };
 		91DD964C2C5FEE23005528F5 /* ExploreItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreItemViewModel.swift; sourceTree = "<group>"; };
 		91DD964E2C5FF0ED005528F5 /* ExploreItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreItemView.swift; sourceTree = "<group>"; };
 		91DD96502C60182F005528F5 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
@@ -293,6 +299,7 @@
 				91519A612C5ECDF900F8227B /* ExploreViewModel.swift */,
 				91DD964C2C5FEE23005528F5 /* ExploreItemViewModel.swift */,
 				91DD96502C60182F005528F5 /* CartViewModel.swift */,
+				9174FD452C63FAEB004B0011 /* UserNameViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -310,6 +317,7 @@
 				91DD96542C601FA4005528F5 /* AddressModel.swift */,
 				91DD96562C602033005528F5 /* PaymentModel.swift */,
 				91DD96582C602152005528F5 /* PromoCodeModel.swift */,
+				9174FD432C63FA5F004B0011 /* UserNameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -395,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				91519A552C5D2DBF00F8227B /* AccountView.swift */,
+				9174FD412C63F359004B0011 /* AccountRowView.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -544,6 +553,7 @@
 			files = (
 				914685C52C21C155003755C2 /* Online_GroceriesApp.swift in Sources */,
 				91DD964F2C5FF0ED005528F5 /* ExploreItemView.swift in Sources */,
+				9174FD442C63FA5F004B0011 /* UserNameModel.swift in Sources */,
 				91DD96552C601FA4005528F5 /* AddressModel.swift in Sources */,
 				91519A492C59213000F8227B /* ImageModel.swift in Sources */,
 				914686132C22D493003755C2 /* LineTextField.swift in Sources */,
@@ -565,8 +575,10 @@
 				914686062C22A41E003755C2 /* SigninView.swift in Sources */,
 				91519A392C5155BC00F8227B /* CategoryCellView.swift in Sources */,
 				914685FE2C21CAC6003755C2 /* WelcomeView.swift in Sources */,
+				9174FD422C63F359004B0011 /* AccountRowView.swift in Sources */,
 				91519A372C5137AD00F8227B /* ProductCellView.swift in Sources */,
 				91519A2B2C4FFBC000F8227B /* ExploreView.swift in Sources */,
+				9174FD462C63FAEB004B0011 /* UserNameViewModel.swift in Sources */,
 				91519A202C4FD2F400F8227B /* UserModel.swift in Sources */,
 				91519A332C510A0A00F8227B /* ImageSliderViews.swift in Sources */,
 				91519A2D2C50E73F00F8227B /* TabButton.swift in Sources */,
@@ -760,6 +772,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Online-Groceries/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = For_Profile_Image;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -797,6 +810,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Online-Groceries/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = For_Profile_Image;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

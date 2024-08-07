@@ -33,6 +33,11 @@ class MainViewModel : ObservableObject {
         
     }
     
+    func logout(){
+        Utils.UDSET(data:false,key: Globs.userLogin)
+        isUserLogin = false
+    }
+    
     func serviceCallLogin(){
         
         if(!txtEmail.isValidEmail){

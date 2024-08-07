@@ -40,7 +40,7 @@ struct SearchTextField: View {
     }
     
     private func startPlaceholderAnimation() {
-        Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { timer in
+        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
             withAnimation(.easeIn){
                 currentPlaceholderIndex = (currentPlaceholderIndex + 1) % placeholders.count
                 placeholder = placeholders[currentPlaceholderIndex]
