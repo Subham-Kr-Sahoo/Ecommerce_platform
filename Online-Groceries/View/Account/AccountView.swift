@@ -21,18 +21,12 @@ struct AccountView: View {
                                     .frame(width:60,height:60)
                                     .foregroundStyle(.gray.opacity(0.15))
                             }
-                            .padding(.trailing,40)
+                            .padding(.trailing,30)
                         VStack{
                             HStack {
                                 Text(accVM.Name)
                                     .font(.customfont(.medium, fontSize: 18))
                                     .foregroundStyle(Color.primaryText)
-                                
-                                Image(systemName:"pencil")
-                                    .resizable()
-                                    .frame(width: 15,height: 15)
-                                    .padding([.bottom,.leading],4)
-                                    .foregroundStyle(Color.primaryApp)
                             }
                             .frame(width:250,alignment: .leading)
                             Text(accVM.Email)
@@ -41,6 +35,16 @@ struct AccountView: View {
                                 .padding(.trailing,35)
                                 .frame(width:250,alignment:.leading)
                         }
+                    
+                    Button{
+                        // i have to make a page specifically to update the username and email and have specifically to update the user image
+                    }label: {
+                        Image(systemName:"pencil")
+                            .resizable()
+                            .frame(width: 15,height: 15)
+                            .padding([.bottom,.leading],4)
+                            .foregroundStyle(Color.primaryApp)
+                    }
                         
                     }
                 .padding(.bottom)
@@ -51,34 +55,47 @@ struct AccountView: View {
                 
                 ScrollView{
                     LazyVStack{
-                        AccountRowView()
-                    }
-                }
-                
-                Button{
-                    MainViewModel.shared.logout()
-                }label: {
-                    ZStack{
-                        Text("Log Out")
-                            .font(.customfont(.semibold, fontSize: 22))
-                            .foregroundStyle(Color.primaryApp)
-                            .multilineTextAlignment(.center)
-                        HStack{
-                            Spacer()
-                            Image(systemName:"rectangle.portrait.and.arrow.right")
-                                .resizable()
-                                .foregroundStyle(Color.primaryApp)
-                                .scaledToFit()
-                                .frame(width:25,height:25)
-                                .padding(.trailing,30)
+                        VStack{
+                            AccountRowView(title:"Orders",icon:"bag")
+                            AccountRowView(title:"My Details",icon:"person.text.rectangle")
+                            NavigationLink{
+                                DeliveryAddressView()
+                            }label: {
+                                AccountRowView(title:"Delivery Address",icon:"mappin.and.ellipse")
+                            }
+                            AccountRowView(title:"Payment Methods",icon:"creditcard.and.123")
+                            AccountRowView(title:"Promo Code",icon:"giftcard")
+                            AccountRowView(title:"Notification",icon:"bell")
+                            AccountRowView(title:"Help",icon:"questionmark.circle")
+                            AccountRowView(title:"About",icon:"exclamationmark.circle")
+                            
+                            Button{
+                                MainViewModel.shared.logout()
+                            }label: {
+                                ZStack{
+                                    Text("Log Out")
+                                        .font(.customfont(.semibold, fontSize: 22))
+                                        .foregroundStyle(Color.primaryApp)
+                                        .multilineTextAlignment(.center)
+                                    HStack{
+                                        Spacer()
+                                        Image(systemName:"rectangle.portrait.and.arrow.right")
+                                            .resizable()
+                                            .foregroundStyle(Color.primaryApp)
+                                            .scaledToFit()
+                                            .frame(width:25,height:25)
+                                            .padding(.trailing,30)
+                                    }
+                                }
+                            }
+                            .frame(minWidth:0,maxWidth:.infinity,minHeight: 60,maxHeight:60)
+                            .background( Color.black.opacity(0.05))
+                            .cornerRadius(20)
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 15)
                         }
                     }
                 }
-                .frame(minWidth:0,maxWidth:.infinity,minHeight: 60,maxHeight:60)
-                .background( Color.black.opacity(0.05))
-                .cornerRadius(20)
-                .padding(.horizontal, 20)
-                .padding(.vertical, 15)
             }
             .padding(.bottom, .bottomInsets + 60)
         }
@@ -87,5 +104,7 @@ struct AccountView: View {
 }
 
 #Preview {
-    AccountView()
+    NavigationView{
+        AccountView()
+    }
 }

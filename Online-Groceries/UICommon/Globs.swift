@@ -32,6 +32,7 @@ struct Globs {
     static let SV_UPDATE_ADDRESS = BASE_URL + "update_delivery_address"
     static let SV_REMOVE_ADDRESS = BASE_URL + "delete_delivery_address"
     static let SV_ADDRESS_LIST = BASE_URL + "delivery_address"
+    static let SV_ADDRESS_MARK_AS_DEFAULT = BASE_URL + "mark_default_delivery_address"
     static let SV_MY_ORDERS_LIST = BASE_URL + "my_order"
     static let SV_MY_ORDERS_DETAIL = BASE_URL + "my_order_detail"
     static let SV_ADD_PAYMENT_METHOD = BASE_URL + "add_payment_method"
