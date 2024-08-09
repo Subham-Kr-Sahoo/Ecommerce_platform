@@ -30,18 +30,6 @@ struct MyCartView: View {
                                 Text("₹"+"\(cartVM.total)")
                             }
                             .font(.customfont(.medium, fontSize: 15))
-                            HStack{
-                                Text("Delivery Charge")
-                                Spacer()
-                                Text("₹"+"\(cartVM.deliverPriceAmount)")
-                            }
-                            .font(.customfont(.medium, fontSize: 15))
-                            HStack{
-                                Text("Discount")
-                                Spacer()
-                                Text("- ₹"+"\(cartVM.discountAmount)")
-                            }
-                            .font(.customfont(.medium, fontSize: 15))
                             .padding(.bottom,12)
                             
                             Rectangle()
@@ -59,8 +47,9 @@ struct MyCartView: View {
                                 Spacer()
                                 Text("₹"+"\(cartVM.userPayAmount)")
                             }
+                            .padding(.bottom,6)
                             .font(.customfont(.medium, fontSize: 15))
-                            
+                            MarqueeTextView(text:"This is not final price, delivery price and other prices can vary the total price.")
                         }
                         
                         ForEach( cartVM.listArr , id: \.id, content: {
