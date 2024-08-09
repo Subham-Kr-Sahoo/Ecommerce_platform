@@ -15,7 +15,6 @@ struct PaymentModel: Identifiable, Equatable {
     var cardMonth: String = ""
     var cardYear: String = ""
     
-    
     init(dict: NSDictionary) {
         self.id = dict.value(forKey: "pay_id") as? Int ?? 0
         self.name = dict.value(forKey: "name") as? String ?? ""

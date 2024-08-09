@@ -25,32 +25,32 @@ struct AddDeliveryAddressView: View {
                         .padding(.horizontal,40/2)
                         .padding(.bottom,6)
                         textfieldview(title:"Full Name",placeholder:"First and Last Name", txt: $addressVM.txtName,keyboardType: .default,characterLimit:100)
-                        textfieldview(title:"Mobile Number",placeholder:"10-digit mobile number without prefixes", txt: $addressVM.txtMobile,keyboardType: .decimalPad, characterLimit:10)
-                        textfieldview(title: "Address Line", placeholder:"Enter you address" , txt: $addressVM.txtAddress,keyboardType: .default,characterLimit:300)
+                        textfieldview(title:"Mobile Number",placeholder:"10-digit mobile number without prefixes", txt: $addressVM.txtMobile,keyboardType: .numberPad, characterLimit:10)
+                        textfieldview(title: "Address Line", placeholder:"Enter you address" , txt: $addressVM.txtAddress,keyboardType: .default,characterLimit:400)
                         HStack{
                             textfieldview(title:"Town/City",placeholder: "City",txt: $addressVM.txtCity,keyboardType: .default, characterLimit:50)
-                            textfieldview(title: "Pin Code", placeholder: "6-digit Pin Code" , txt: $addressVM.txtPostalCode,keyboardType: .default,characterLimit:6)
+                            textfieldview(title: "Pin Code", placeholder: "6-digit Pin Code" , txt: $addressVM.txtPostalCode,keyboardType: .numberPad,characterLimit:6)
                         }
                         SheetView()
                             .padding(.horizontal,10)
                             .padding(.top,-12)
                     }
-                    RoundedButton(title: isEdit ? "Update Address" : "Add Address") {
-                        if(isEdit) {
-                            addressVM.serviceCallUpdateAddress(aObj:editObj) {
-                                self.mode.wrappedValue.dismiss()
-                            }
-                        }else{
-                            addressVM.serviceCallAddAddress {
-                                self.mode.wrappedValue.dismiss()
-                            }
-                        }
-                    }
-                    .padding(.top,100)
-                    .padding(.horizontal)
                 }
             }
             .padding(.top,.topInsets+70)
+            RoundedButton(title: isEdit ? "Update Address" : "Add Address") {
+                if(isEdit) {
+                    addressVM.serviceCallUpdateAddress(aObj:editObj) {
+                        self.mode.wrappedValue.dismiss()
+                    }
+                }else{
+                    addressVM.serviceCallAddAddress {
+                        self.mode.wrappedValue.dismiss()
+                    }
+                }
+            }
+            .padding(.top,600)
+            .padding(.horizontal)
             VStack {
                 HStack{
                     Button {

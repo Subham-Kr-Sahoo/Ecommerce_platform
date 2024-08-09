@@ -63,7 +63,11 @@ struct AccountView: View {
                             }label: {
                                 AccountRowView(title:"Delivery Address",icon:"mappin.and.ellipse")
                             }
-                            AccountRowView(title:"Payment Methods",icon:"creditcard.and.123")
+                            NavigationLink{
+                                PaymentView()
+                            }label: {
+                                AccountRowView(title:"Payment Methods",icon:"creditcard.and.123")
+                            }
                             NavigationLink{
                                 PromoCodeView()
                             }label: {

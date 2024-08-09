@@ -65,6 +65,10 @@
 		9160D5102C66876E0003DF3F /* PromoCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160D50F2C66876E0003DF3F /* PromoCodeView.swift */; };
 		9160D5122C6687850003DF3F /* PromocodeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160D5112C6687850003DF3F /* PromocodeCellView.swift */; };
 		9160D5142C66A2C20003DF3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9160D5132C66A2C20003DF3F /* Assets.xcassets */; };
+		9160D5162C66B33E0003DF3F /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160D5152C66B33E0003DF3F /* PaymentViewModel.swift */; };
+		9160D5182C66B37D0003DF3F /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160D5172C66B37D0003DF3F /* PaymentView.swift */; };
+		9160D51A2C66B3910003DF3F /* PaymentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160D5192C66B3910003DF3F /* PaymentRowView.swift */; };
+		9160D51C2C66B58E0003DF3F /* AddPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160D51B2C66B58E0003DF3F /* AddPaymentView.swift */; };
 		9174FD422C63F359004B0011 /* AccountRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174FD412C63F359004B0011 /* AccountRowView.swift */; };
 		9174FD442C63FA5F004B0011 /* UserNameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174FD432C63FA5F004B0011 /* UserNameModel.swift */; };
 		9174FD462C63FAEB004B0011 /* UserNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174FD452C63FAEB004B0011 /* UserNameViewModel.swift */; };
@@ -162,6 +166,10 @@
 		9160D50F2C66876E0003DF3F /* PromoCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCodeView.swift; sourceTree = "<group>"; };
 		9160D5112C6687850003DF3F /* PromocodeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromocodeCellView.swift; sourceTree = "<group>"; };
 		9160D5132C66A2C20003DF3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9160D5152C66B33E0003DF3F /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
+		9160D5172C66B37D0003DF3F /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		9160D5192C66B3910003DF3F /* PaymentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRowView.swift; sourceTree = "<group>"; };
+		9160D51B2C66B58E0003DF3F /* AddPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentView.swift; sourceTree = "<group>"; };
 		9174FD412C63F359004B0011 /* AccountRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRowView.swift; sourceTree = "<group>"; };
 		9174FD432C63FA5F004B0011 /* UserNameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameModel.swift; sourceTree = "<group>"; };
 		9174FD452C63FAEB004B0011 /* UserNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameViewModel.swift; sourceTree = "<group>"; };
@@ -322,6 +330,7 @@
 				9174FD452C63FAEB004B0011 /* UserNameViewModel.swift */,
 				9174FD4B2C641839004B0011 /* DeliveryAddressViewModel.swift */,
 				9160D50D2C6685B70003DF3F /* PromocodeViewModel.swift */,
+				9160D5152C66B33E0003DF3F /* PaymentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -431,6 +440,9 @@
 				9160D50B2C65609E0003DF3F /* SheetView.swift */,
 				9160D50F2C66876E0003DF3F /* PromoCodeView.swift */,
 				9160D5112C6687850003DF3F /* PromocodeCellView.swift */,
+				9160D5172C66B37D0003DF3F /* PaymentView.swift */,
+				9160D51B2C66B58E0003DF3F /* AddPaymentView.swift */,
+				9160D5192C66B3910003DF3F /* PaymentRowView.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -584,6 +596,7 @@
 				9160D5102C66876E0003DF3F /* PromoCodeView.swift in Sources */,
 				91DD96552C601FA4005528F5 /* AddressModel.swift in Sources */,
 				91519A492C59213000F8227B /* ImageModel.swift in Sources */,
+				9160D51A2C66B3910003DF3F /* PaymentRowView.swift in Sources */,
 				914686132C22D493003755C2 /* LineTextField.swift in Sources */,
 				91519A4B2C5A8F8600F8227B /* TermsofServiceView.swift in Sources */,
 				91519A562C5D2DBF00F8227B /* AccountView.swift in Sources */,
@@ -605,11 +618,13 @@
 				914686062C22A41E003755C2 /* SigninView.swift in Sources */,
 				91519A392C5155BC00F8227B /* CategoryCellView.swift in Sources */,
 				914685FE2C21CAC6003755C2 /* WelcomeView.swift in Sources */,
+				9160D5162C66B33E0003DF3F /* PaymentViewModel.swift in Sources */,
 				9174FD422C63F359004B0011 /* AccountRowView.swift in Sources */,
 				91519A372C5137AD00F8227B /* ProductCellView.swift in Sources */,
 				9160D5122C6687850003DF3F /* PromocodeCellView.swift in Sources */,
 				91519A2B2C4FFBC000F8227B /* ExploreView.swift in Sources */,
 				9174FD462C63FAEB004B0011 /* UserNameViewModel.swift in Sources */,
+				9160D5182C66B37D0003DF3F /* PaymentView.swift in Sources */,
 				91519A202C4FD2F400F8227B /* UserModel.swift in Sources */,
 				91519A332C510A0A00F8227B /* ImageSliderViews.swift in Sources */,
 				91519A2D2C50E73F00F8227B /* TabButton.swift in Sources */,
@@ -619,6 +634,7 @@
 				914686152C22EE8C003755C2 /* ServiceCall.swift in Sources */,
 				91519A3B2C51648E00F8227B /* ProductModel.swift in Sources */,
 				91519A602C5E813D00F8227B /* MarqueeTextView.swift in Sources */,
+				9160D51C2C66B58E0003DF3F /* AddPaymentView.swift in Sources */,
 				91DD96532C601930005528F5 /* CartItemModel.swift in Sources */,
 				9160D50E2C6685B70003DF3F /* PromocodeViewModel.swift in Sources */,
 				91519A5A2C5E6CB200F8227B /* FavouriteViewModel.swift in Sources */,
