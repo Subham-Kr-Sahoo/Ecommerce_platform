@@ -33,14 +33,17 @@ struct AddressRowView: View {
                     }
                     Text("Phone number: "+addressObj.phone)
                         .frame(minWidth:0,maxWidth:.screenWidth-60,alignment: .leading)
+                    
+                    Text("Type: "+addressObj.typeName)
+                        .frame(minWidth:0,maxWidth:.screenWidth-60,alignment: .leading)
                 }
                 .font(.customfont(.medium, fontSize:16))
                 .foregroundStyle(.black)
-                .padding(.bottom,12)
+                .padding(.bottom,4)
                 
                 HStack{
                     NavigationLink{
-                        
+                        AddDeliveryAddressView(isEdit: true,editObj: addressObj)
                     }label: {
                         Text("Edit")
                             .foregroundColor(.black)
@@ -49,7 +52,7 @@ struct AddressRowView: View {
                             .background(
                                 RoundedRectangle(cornerRadius:8)
                                     .stroke(Color.gray, lineWidth: 1)
-                    )}
+                            )}
                     Button(action: {
                         addressVM.serviceCallRemove(Address:addressObj)
                     }) {
@@ -61,7 +64,7 @@ struct AddressRowView: View {
                     .background(
                         RoundedRectangle(cornerRadius:8)
                             .stroke(Color.gray, lineWidth: 1)
-                    )
+                        )
                     
                     Button(action: {
                         addressVM.serviceCallMarkasDefault(Address: addressObj)
@@ -74,7 +77,7 @@ struct AddressRowView: View {
                     .background(
                         RoundedRectangle(cornerRadius:8)
                             .stroke(Color.gray, lineWidth: 1)
-                    )
+                        )
                     .padding(.trailing,8)
                 }
                 

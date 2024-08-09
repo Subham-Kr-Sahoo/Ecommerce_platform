@@ -38,7 +38,7 @@ struct DeliveryAddressView: View {
                         .frame(height: 46)
                     Spacer()
                     NavigationLink {
-                        
+                        AddDeliveryAddressView()
                     } label: {
                         Image(systemName: "plus")
                             .resizable()
