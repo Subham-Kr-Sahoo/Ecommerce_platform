@@ -49,7 +49,7 @@ struct MyCartView: View {
                             }
                             .padding(.bottom,6)
                             .font(.customfont(.medium, fontSize: 15))
-                            MarqueeTextView(text:"This is not final price, delivery price and other prices can vary the total price.")
+                            MarqueeTextView(text:"This is not final price, delivery price and other prices can affect the total price.")
                         }
                         
                         ForEach( cartVM.listArr , id: \.id, content: {
