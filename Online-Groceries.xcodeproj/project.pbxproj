@@ -69,6 +69,7 @@
 		9160D5182C66B37D0003DF3F /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160D5172C66B37D0003DF3F /* PaymentView.swift */; };
 		9160D51A2C66B3910003DF3F /* PaymentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160D5192C66B3910003DF3F /* PaymentRowView.swift */; };
 		9160D51C2C66B58E0003DF3F /* AddPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160D51B2C66B58E0003DF3F /* AddPaymentView.swift */; };
+		9160D51E2C69026F0003DF3F /* CheckOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160D51D2C69026F0003DF3F /* CheckOutView.swift */; };
 		9174FD422C63F359004B0011 /* AccountRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174FD412C63F359004B0011 /* AccountRowView.swift */; };
 		9174FD442C63FA5F004B0011 /* UserNameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174FD432C63FA5F004B0011 /* UserNameModel.swift */; };
 		9174FD462C63FAEB004B0011 /* UserNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174FD452C63FAEB004B0011 /* UserNameViewModel.swift */; };
@@ -170,6 +171,7 @@
 		9160D5172C66B37D0003DF3F /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		9160D5192C66B3910003DF3F /* PaymentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRowView.swift; sourceTree = "<group>"; };
 		9160D51B2C66B58E0003DF3F /* AddPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentView.swift; sourceTree = "<group>"; };
+		9160D51D2C69026F0003DF3F /* CheckOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutView.swift; sourceTree = "<group>"; };
 		9174FD412C63F359004B0011 /* AccountRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRowView.swift; sourceTree = "<group>"; };
 		9174FD432C63FA5F004B0011 /* UserNameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameModel.swift; sourceTree = "<group>"; };
 		9174FD452C63FAEB004B0011 /* UserNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameViewModel.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				91519A512C5D2D9A00F8227B /* MyCartView.swift */,
+				9160D51D2C69026F0003DF3F /* CheckOutView.swift */,
 				91DD965C2C611D70005528F5 /* CartItemRowView.swift */,
 			);
 			path = Cart;
@@ -652,6 +655,7 @@
 				91DD965D2C611D70005528F5 /* CartItemRowView.swift in Sources */,
 				91519A642C5ECF2200F8227B /* ExploreModel.swift in Sources */,
 				9174FD522C6512D8004B0011 /* StepProgressBar.swift in Sources */,
+				9160D51E2C69026F0003DF3F /* CheckOutView.swift in Sources */,
 				91519A432C591DD700F8227B /* ProductDetailView.swift in Sources */,
 				91519A622C5ECDF900F8227B /* ExploreViewModel.swift in Sources */,
 				91519A582C5D2DD000F8227B /* FavouriteView.swift in Sources */,

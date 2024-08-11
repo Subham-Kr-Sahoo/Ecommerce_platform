@@ -35,7 +35,7 @@ struct ExploreView: View {
                         .frame(width: 20, height: 20)
                         .padding(.horizontal, 8)
                     
-                    TextField("Search Products", text: $txtSearch)
+                    TextField("Search Categories", text: $txtSearch)
                         .font(.system(size: 20, weight: .semibold))
                         .autocapitalization(.none)
                         .disableAutocorrection(false)

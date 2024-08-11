@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExploreItemView: View {
+    @State var txtSearch : String = ""
     @Environment (\.presentationMode) var mode : Binding<PresentationMode>
     @StateObject var itemsVM = ExploreItemViewModel(catObj: ExploreModel(dict: [:]))
     var columns = [GridItem(.flexible(),spacing:8),GridItem(.flexible(),spacing:8)]
@@ -42,6 +43,26 @@ struct ExploreItemView: View {
                    .padding(.top,50)
                    .padding(.trailing,20+10)
                }
+                //MARK: search bar
+                HStack(alignment: .center) {
+                    Image(systemName: "magnifyingglass")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 20, height: 20)
+                        .padding(.horizontal, 8)
+                    
+                    TextField("Search Products", text: $txtSearch)
+                        .font(.system(size: 20, weight: .semibold))
+                        .autocapitalization(.none)
+                        .disableAutocorrection(false)
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                }
+                .frame(height: 40)
+                .padding(8)
+                .background(Color(hex: "E5E4E2"))
+                .cornerRadius(16)
+                .padding(.horizontal,12)
+                .padding(.vertical,6)
                //MARK: Products lineup
                 ScrollView(showsIndicators:false){
                     LazyVGrid(columns:columns,spacing:15){

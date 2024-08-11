@@ -10,6 +10,8 @@ import SwiftUI
 struct DeliveryAddressView: View {
     @Environment (\.presentationMode) var mode : Binding<PresentationMode>
     @StateObject var addressVM = DeliveryAddressViewModel.shared
+    @State var isPicker: Bool = false
+    var didSelect:( (_ obj: AddressModel) -> () )?
     var body: some View {
         ZStack{
             ScrollView{
@@ -17,6 +19,12 @@ struct DeliveryAddressView: View {
                     ForEach(addressVM.AddressArray,id:\.id){
                         AddObj in
                         AddressRowView(addressObj: AddObj)
+                        .onTapGesture {
+                            if(isPicker) {
+                                mode.wrappedValue.dismiss()
+                                didSelect?(AddObj)
+                            }
+                        }
                     }
                 }
             }

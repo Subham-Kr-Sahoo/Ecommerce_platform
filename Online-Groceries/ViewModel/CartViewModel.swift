@@ -115,7 +115,7 @@ class CartViewModel : ObservableObject {
             return
         }
         
-        ServiceCall.post(parameter: ["address_id": deliveryType == 2 ? "" : "\( deliverObj?.id ?? 0)",
+        ServiceCall.post(parameter: ["address_id": deliveryType == 2 ? "0" : "\( deliverObj?.id ?? 0)",
                                      "deliver_type": deliveryType,
                                      "payment_type": paymentType,
                                      "pay_id": paymentType == 1 ? "" : "\( paymentObj?.id ?? 0)",
@@ -131,7 +131,6 @@ class CartViewModel : ObservableObject {
                     self.errorMessage = response.value(forKey: KKey.message) as? String ?? "Success"
                     self.showError = true
                     self.serviceCallList()
-                    
                     self.showOrderAccept = true
                 
                 }else{

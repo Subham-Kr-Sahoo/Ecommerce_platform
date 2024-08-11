@@ -10,12 +10,20 @@ import SwiftUI
 struct PaymentView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @StateObject var payVM = PaymentViewModel.shared
+    @State var isPicker: Bool = false
+    var didSelect:( (_ obj: PaymentModel) -> () )?
     var body: some View {
         ZStack{
             ScrollView{
                 LazyVStack{
-                    ForEach(payVM.listArr,id: \.id){payObj in
+                    ForEach(payVM.listArr,id:\.id){payObj in
                         PaymentRowView(CardObj:payObj)
+                            .onTapGesture {
+                            if(isPicker) {
+                                mode.wrappedValue.dismiss()
+                                didSelect?(payObj)
+                            }
+                        }
                     }
                 }
             }

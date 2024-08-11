@@ -45,7 +45,7 @@ struct MyCartView: View {
                             HStack{
                                 Text("Total Price")
                                 Spacer()
-                                Text("₹"+"\(cartVM.userPayAmount)")
+                                Text("₹"+"\(cartVM.total)")
                             }
                             .padding(.bottom,6)
                             .font(.customfont(.medium, fontSize: 15))
@@ -59,8 +59,7 @@ struct MyCartView: View {
                         .padding(.vertical,4)
                     }
                     .padding(20)
-                    .padding(.top,.topInsets-12)
-                    .padding(.bottom,.bottomInsets+60)
+                    .padding(.top,100)
                 }
             }
              
@@ -75,6 +74,7 @@ struct MyCartView: View {
                  .padding(.top,8)
                  .background(Color.white)
                  .shadow(color: .black.opacity(0.1), radius:30)
+                 .padding(.top,.topInsets)
                  
                  
                  Spacer()
@@ -87,19 +87,18 @@ struct MyCartView: View {
                                  .font(.customfont(.semibold, fontSize: 18))
                                  .foregroundColor(.white)
                                  .multilineTextAlignment(.center)
+                                 .frame( minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60 )
+                                 .background( Color.primaryApp)
+                                 .cornerRadius(20)
+                                 .padding(.horizontal, 20)
                          }
                          
                      }
-                     .frame( minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60 )
-                     .background( Color.primaryApp)
-                     .cornerRadius(20)
-                     .padding(.horizontal, 20)
-                     .padding(.bottom, .bottomInsets + 46)
-
+                     .padding(.bottom, .bottomInsets + 60)
                  }
                  
              }
-             if(cartVM.showCheckout) {
+             if(cartVM.showCheckout){
                  Color.black
                      .opacity(0.3)
                      .ignoresSafeArea()
@@ -109,16 +108,13 @@ struct MyCartView: View {
                          }
                      }
                  
-                 //CheckoutView(isShow: $cartVM.showCheckout )
-                     //.transition(.opacity.combined(with: .move(edge: .bottom)))
+                 CheckOutView(isShow: $cartVM.showCheckout)
+                     .transition(.opacity.combined(with: .move(edge: .bottom)))
              }
          }
          .onAppear{
              cartVM.serviceCallList()
          }
-         //.background( NavigationLink(destination: OrderAccpetView(), isActive: $cartVM.showOrderAccept  , label: {
-             EmptyView()
-         //}) )
          .alert(isPresented: $cartVM.showError, content: {
              Alert(title: Text(Globs.AppName), message: Text(cartVM.errorMessage), dismissButton: .default(Text("OK")) )
          })

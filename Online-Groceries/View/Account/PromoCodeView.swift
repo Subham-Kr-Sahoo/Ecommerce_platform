@@ -14,12 +14,32 @@ struct PromoCodeView: View {
     var didSelect:( (_ obj: PromoCodeModel) -> () )?
     var column = [GridItem(.flexible(),spacing:10),
         GridItem(.flexible(),spacing:10)]
+    @StateObject var cartVM = CartViewModel.shared
+    @State private var showAlert = false
+    @State private var alertMessage = ""
     var body: some View {
         ZStack{
             ScrollView{
                 LazyVGrid(columns:column,spacing:5){
                     ForEach(promoVM.listArr,id:\.id){ coupon in
                         PromocodeCellView(promoObj: coupon)
+                        .onTapGesture {
+                            if(isPicker && coupon.end_date >= Date.now && coupon.min_order_amount < Int(Double(cartVM.total) ?? 0.0)) {
+                                mode.wrappedValue.dismiss()
+                                didSelect?(coupon)
+                            }
+                            if (isPicker && coupon.end_date < Date.now){
+                                alertMessage = "Coupon is Expired"
+                                showAlert = true
+                            }
+                            if (isPicker && coupon.end_date >= Date.now && coupon.min_order_amount > Int(Double(cartVM.total) ?? 0)){
+                                alertMessage = "Minimum amount to use the coupon is ₹\(coupon.min_order_amount)"
+                                showAlert = true
+                            }
+                        }
+                        .alert(isPresented: $showAlert){
+                            Alert(title: Text(Globs.AppName), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                        }
                     }
                 }
             }
