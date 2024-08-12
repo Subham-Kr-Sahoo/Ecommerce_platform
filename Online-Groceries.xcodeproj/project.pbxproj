@@ -70,6 +70,9 @@
 		9160D51A2C66B3910003DF3F /* PaymentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160D5192C66B3910003DF3F /* PaymentRowView.swift */; };
 		9160D51C2C66B58E0003DF3F /* AddPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160D51B2C66B58E0003DF3F /* AddPaymentView.swift */; };
 		9160D51E2C69026F0003DF3F /* CheckOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160D51D2C69026F0003DF3F /* CheckOutView.swift */; };
+		9160D5242C6AB0FE0003DF3F /* MyOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160D5232C6AB0FE0003DF3F /* MyOrderModel.swift */; };
+		9160D5262C6AB1A90003DF3F /* MyOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160D5252C6AB1A90003DF3F /* MyOrderViewModel.swift */; };
+		9160D5282C6AB24F0003DF3F /* MyOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160D5272C6AB24F0003DF3F /* MyOrderView.swift */; };
 		9174FD422C63F359004B0011 /* AccountRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174FD412C63F359004B0011 /* AccountRowView.swift */; };
 		9174FD442C63FA5F004B0011 /* UserNameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174FD432C63FA5F004B0011 /* UserNameModel.swift */; };
 		9174FD462C63FAEB004B0011 /* UserNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174FD452C63FAEB004B0011 /* UserNameViewModel.swift */; };
@@ -87,6 +90,11 @@
 		91DD96592C602152005528F5 /* PromoCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DD96582C602152005528F5 /* PromoCodeModel.swift */; };
 		91DD965B2C60255B005528F5 /* DebitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DD965A2C60255B005528F5 /* DebitCardView.swift */; };
 		91DD965D2C611D70005528F5 /* CartItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DD965C2C611D70005528F5 /* CartItemRowView.swift */; };
+		91F366812C6ABA2800D6E521 /* MyOrderRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F366802C6ABA2800D6E521 /* MyOrderRowView.swift */; };
+		91F366832C6AC0E300D6E521 /* MyOrderDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F366822C6AC0E300D6E521 /* MyOrderDetailViewModel.swift */; };
+		91F366852C6AC12100D6E521 /* OrderItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F366842C6AC12100D6E521 /* OrderItemModel.swift */; };
+		91F366872C6AC33300D6E521 /* MyOrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F366862C6AC33300D6E521 /* MyOrderDetailView.swift */; };
+		91F366892C6AC4B300D6E521 /* OrderItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F366882C6AC4B300D6E521 /* OrderItemRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +180,9 @@
 		9160D5192C66B3910003DF3F /* PaymentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRowView.swift; sourceTree = "<group>"; };
 		9160D51B2C66B58E0003DF3F /* AddPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentView.swift; sourceTree = "<group>"; };
 		9160D51D2C69026F0003DF3F /* CheckOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutView.swift; sourceTree = "<group>"; };
+		9160D5232C6AB0FE0003DF3F /* MyOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderModel.swift; sourceTree = "<group>"; };
+		9160D5252C6AB1A90003DF3F /* MyOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderViewModel.swift; sourceTree = "<group>"; };
+		9160D5272C6AB24F0003DF3F /* MyOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderView.swift; sourceTree = "<group>"; };
 		9174FD412C63F359004B0011 /* AccountRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRowView.swift; sourceTree = "<group>"; };
 		9174FD432C63FA5F004B0011 /* UserNameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameModel.swift; sourceTree = "<group>"; };
 		9174FD452C63FAEB004B0011 /* UserNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameViewModel.swift; sourceTree = "<group>"; };
@@ -189,6 +200,11 @@
 		91DD96582C602152005528F5 /* PromoCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCodeModel.swift; sourceTree = "<group>"; };
 		91DD965A2C60255B005528F5 /* DebitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebitCardView.swift; sourceTree = "<group>"; };
 		91DD965C2C611D70005528F5 /* CartItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemRowView.swift; sourceTree = "<group>"; };
+		91F366802C6ABA2800D6E521 /* MyOrderRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderRowView.swift; sourceTree = "<group>"; };
+		91F366822C6AC0E300D6E521 /* MyOrderDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderDetailViewModel.swift; sourceTree = "<group>"; };
+		91F366842C6AC12100D6E521 /* OrderItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemModel.swift; sourceTree = "<group>"; };
+		91F366862C6AC33300D6E521 /* MyOrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderDetailView.swift; sourceTree = "<group>"; };
+		91F366882C6AC4B300D6E521 /* OrderItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +331,7 @@
 				91DD965A2C60255B005528F5 /* DebitCardView.swift */,
 				9174FD4D2C641F34004B0011 /* AddressRowView.swift */,
 				9174FD512C6512D8004B0011 /* StepProgressBar.swift */,
+				91F366882C6AC4B300D6E521 /* OrderItemRowView.swift */,
 			);
 			path = UICommon;
 			sourceTree = "<group>";
@@ -333,6 +350,8 @@
 				9174FD4B2C641839004B0011 /* DeliveryAddressViewModel.swift */,
 				9160D50D2C6685B70003DF3F /* PromocodeViewModel.swift */,
 				9160D5152C66B33E0003DF3F /* PaymentViewModel.swift */,
+				9160D5252C6AB1A90003DF3F /* MyOrderViewModel.swift */,
+				91F366822C6AC0E300D6E521 /* MyOrderDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -351,6 +370,8 @@
 				91DD96562C602033005528F5 /* PaymentModel.swift */,
 				91DD96582C602152005528F5 /* PromoCodeModel.swift */,
 				9174FD432C63FA5F004B0011 /* UserNameModel.swift */,
+				9160D5232C6AB0FE0003DF3F /* MyOrderModel.swift */,
+				91F366842C6AC12100D6E521 /* OrderItemModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -446,6 +467,9 @@
 				9160D5172C66B37D0003DF3F /* PaymentView.swift */,
 				9160D51B2C66B58E0003DF3F /* AddPaymentView.swift */,
 				9160D5192C66B3910003DF3F /* PaymentRowView.swift */,
+				9160D5272C6AB24F0003DF3F /* MyOrderView.swift */,
+				91F366802C6ABA2800D6E521 /* MyOrderRowView.swift */,
+				91F366862C6AC33300D6E521 /* MyOrderDetailView.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -596,6 +620,8 @@
 				914685C52C21C155003755C2 /* Online_GroceriesApp.swift in Sources */,
 				91DD964F2C5FF0ED005528F5 /* ExploreItemView.swift in Sources */,
 				9174FD442C63FA5F004B0011 /* UserNameModel.swift in Sources */,
+				9160D5282C6AB24F0003DF3F /* MyOrderView.swift in Sources */,
+				91F366812C6ABA2800D6E521 /* MyOrderRowView.swift in Sources */,
 				9160D5102C66876E0003DF3F /* PromoCodeView.swift in Sources */,
 				91DD96552C601FA4005528F5 /* AddressModel.swift in Sources */,
 				91519A492C59213000F8227B /* ImageModel.swift in Sources */,
@@ -606,6 +632,7 @@
 				91DD96512C60182F005528F5 /* CartViewModel.swift in Sources */,
 				9146860F2C22BF7F003755C2 /* LoginView.swift in Sources */,
 				91519A452C591EE400F8227B /* ProductDetailViewModel.swift in Sources */,
+				9160D5242C6AB0FE0003DF3F /* MyOrderModel.swift in Sources */,
 				91519A252C4FF9F700F8227B /* HomeViewModel.swift in Sources */,
 				91519A1C2C4EA66800F8227B /* UIExtensions.swift in Sources */,
 				91DD96572C602033005528F5 /* PaymentModel.swift in Sources */,
@@ -631,6 +658,7 @@
 				91519A202C4FD2F400F8227B /* UserModel.swift in Sources */,
 				91519A332C510A0A00F8227B /* ImageSliderViews.swift in Sources */,
 				91519A2D2C50E73F00F8227B /* TabButton.swift in Sources */,
+				9160D5262C6AB1A90003DF3F /* MyOrderViewModel.swift in Sources */,
 				9146860B2C22B70C003755C2 /* CountryPicker.swift in Sources */,
 				91519A4F2C5AB02200F8227B /* MonthYearView.swift in Sources */,
 				91519A662C5ED2C900F8227B /* ExploreCategoryCellView.swift in Sources */,
@@ -645,6 +673,7 @@
 				91519A522C5D2D9A00F8227B /* MyCartView.swift in Sources */,
 				9174FD4E2C641F34004B0011 /* AddressRowView.swift in Sources */,
 				9174FD4C2C641839004B0011 /* DeliveryAddressViewModel.swift in Sources */,
+				91F366872C6AC33300D6E521 /* MyOrderDetailView.swift in Sources */,
 				914686042C21D752003755C2 /* RoundedButton.swift in Sources */,
 				91519A1E2C4EAF2A00F8227B /* SignupView.swift in Sources */,
 				91519A4D2C5A8FAA00F8227B /* PrivacyPolicyView.swift in Sources */,
@@ -652,7 +681,9 @@
 				91DD964D2C5FEE23005528F5 /* ExploreItemViewModel.swift in Sources */,
 				914686112C22D349003755C2 /* MainViewModel.swift in Sources */,
 				91519A232C4FE6AC00F8227B /* MainTabView.swift in Sources */,
+				91F366852C6AC12100D6E521 /* OrderItemModel.swift in Sources */,
 				91DD965D2C611D70005528F5 /* CartItemRowView.swift in Sources */,
+				91F366832C6AC0E300D6E521 /* MyOrderDetailViewModel.swift in Sources */,
 				91519A642C5ECF2200F8227B /* ExploreModel.swift in Sources */,
 				9174FD522C6512D8004B0011 /* StepProgressBar.swift in Sources */,
 				9160D51E2C69026F0003DF3F /* CheckOutView.swift in Sources */,
@@ -661,6 +692,7 @@
 				91519A582C5D2DD000F8227B /* FavouriteView.swift in Sources */,
 				91519A472C59201D00F8227B /* NutritionModel.swift in Sources */,
 				91519A5C2C5E704400F8227B /* FavouriteRowView.swift in Sources */,
+				91F366892C6AC4B300D6E521 /* OrderItemRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -56,7 +56,11 @@ struct AccountView: View {
                 ScrollView{
                     LazyVStack{
                         VStack{
-                            AccountRowView(title:"Orders",icon:"bag")
+                            NavigationLink{
+                                MyOrderView()
+                            }label: {
+                                AccountRowView(title:"Orders",icon:"bag")
+                            }
                             AccountRowView(title:"My Details",icon:"person.text.rectangle")
                             NavigationLink{
                                 DeliveryAddressView()
