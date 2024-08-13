@@ -95,6 +95,7 @@
 		91F366852C6AC12100D6E521 /* OrderItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F366842C6AC12100D6E521 /* OrderItemModel.swift */; };
 		91F366872C6AC33300D6E521 /* MyOrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F366862C6AC33300D6E521 /* MyOrderDetailView.swift */; };
 		91F366892C6AC4B300D6E521 /* OrderItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F366882C6AC4B300D6E521 /* OrderItemRowView.swift */; };
+		91F3668B2C6BD79000D6E521 /* OrderDetailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F3668A2C6BD79000D6E521 /* OrderDetailRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,6 +206,7 @@
 		91F366842C6AC12100D6E521 /* OrderItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemModel.swift; sourceTree = "<group>"; };
 		91F366862C6AC33300D6E521 /* MyOrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderDetailView.swift; sourceTree = "<group>"; };
 		91F366882C6AC4B300D6E521 /* OrderItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemRowView.swift; sourceTree = "<group>"; };
+		91F3668A2C6BD79000D6E521 /* OrderDetailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -470,6 +472,7 @@
 				9160D5272C6AB24F0003DF3F /* MyOrderView.swift */,
 				91F366802C6ABA2800D6E521 /* MyOrderRowView.swift */,
 				91F366862C6AC33300D6E521 /* MyOrderDetailView.swift */,
+				91F3668A2C6BD79000D6E521 /* OrderDetailRowView.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				91F366812C6ABA2800D6E521 /* MyOrderRowView.swift in Sources */,
 				9160D5102C66876E0003DF3F /* PromoCodeView.swift in Sources */,
 				91DD96552C601FA4005528F5 /* AddressModel.swift in Sources */,
+				91F3668B2C6BD79000D6E521 /* OrderDetailRowView.swift in Sources */,
 				91519A492C59213000F8227B /* ImageModel.swift in Sources */,
 				9160D51A2C66B3910003DF3F /* PaymentRowView.swift in Sources */,
 				914686132C22D493003755C2 /* LineTextField.swift in Sources */,

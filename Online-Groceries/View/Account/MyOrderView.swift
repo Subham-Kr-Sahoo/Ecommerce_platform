@@ -17,7 +17,7 @@ struct MyOrderView : View {
                 LazyVStack{
                     ForEach(myVM.listArr,id: \.id){myObj in
                         NavigationLink{
-                            
+                            MyOrderDetailView(detailVM: MyOrderDetailViewModel(prodObj:myObj))
                         }label: {
                             MyOrderRowView(myObj: myObj)
                         }
@@ -59,5 +59,7 @@ struct MyOrderView : View {
 }
 
 #Preview {
-    MyOrderView()
+    NavigationView{
+        MyOrderView()
+    }
 }
