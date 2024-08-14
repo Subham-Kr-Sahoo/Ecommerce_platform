@@ -46,7 +46,7 @@ struct SheetView: View {
 struct OptionSelectionSheet: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var state: String
-    let options = ["Andaman & Nicobar Islands","Andhra Prades","Arunachal Pradesh","Assam",
+    let options = ["Andaman & Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam",
                    "Bihar","Chandigarh","Chhattisgarh","Dadra & Nagar Haveli & Daman & Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu & Kashmir","Jharkhand","Karnataka","Kerala","Ladakh","Lakshadweep","Madhya Pradesh", "Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Pudducherry","Punjab", "Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh", "Uttarakhand","West Bengal"]
     var body: some View {
         NavigationView {
