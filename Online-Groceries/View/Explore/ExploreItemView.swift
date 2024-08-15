@@ -19,7 +19,7 @@ struct ExploreItemView: View {
                HStack{
                    Button{
                        mode.wrappedValue.dismiss()
-                   }label: {
+                   }label:{
                        Image("back")
                            .resizable()
                            .scaledToFit()
