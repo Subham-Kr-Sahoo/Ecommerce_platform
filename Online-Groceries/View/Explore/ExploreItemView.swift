@@ -17,7 +17,7 @@ struct ExploreItemView: View {
             VStack{
                //MARK: back button and share button
                HStack{
-                   Button{
+                   Button{ 
                        mode.wrappedValue.dismiss()
                    }label:{
                        Image("back")
