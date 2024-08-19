@@ -41,6 +41,7 @@ struct Globs {
     static let SV_PAYMENT_METHOD_LIST = BASE_URL + "payment_method"
     static let SV_NOTIFICATION_LIST = BASE_URL + "notification_list"
     static let SV_NOTIFICATION_READ_ALL = BASE_URL + "notification_read_all"
+    static let SV_NOTIFICATION_READ_ONE = BASE_URL + "notification_read"
     static let SV_UPDATE_PROFILE = BASE_URL + "update_profile"
     static let SV_CHANGE_PASSWORD = BASE_URL + "change_password"
     static let SV_FORGOT_PASSWORD_REQUEST = BASE_URL + "forgot_password_request"
@@ -60,19 +61,15 @@ class Utils {
         UserDefaults.standard.set(data, forKey: key)
         UserDefaults.standard.synchronize()
     }
-    
     class func UDValue( key: String) -> Any {
        return UserDefaults.standard.value(forKey: key) as Any
     }
-    
     class func UDValueBool( key: String) -> Bool {
        return UserDefaults.standard.value(forKey: key) as? Bool ?? false
     }
-    
     class func UDValueTrueBool( key: String) -> Bool {
        return UserDefaults.standard.value(forKey: key) as? Bool ?? true
     }
-    
     class func UDRemove( key: String) {
         UserDefaults.standard.removeObject(forKey: key)
         UserDefaults.standard.synchronize()

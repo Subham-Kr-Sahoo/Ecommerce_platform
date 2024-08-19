@@ -52,10 +52,8 @@ struct DebitCardView: View {
                             .textCase(.uppercase)
                             .font(.subheadline)
                             .foregroundStyle(.white)
-                            .padding(.trailing,65)
-                            
-                        
-                        
+                            .padding(.leading,-6)
+                            .frame(width:200,height: 20,alignment: .leading)
                     }
                     .padding(.leading,20)
                     .padding(.top,80)
@@ -118,6 +116,10 @@ struct DebitCardView: View {
 
 #Preview {
     NavigationView {
-        DebitCardView()
+        DebitCardView(cardObj: PaymentModel(dict: [            "pay_id": 4,
+                                                               "name": "Ashutosh Maharana",
+                                                               "card_number": "3434",
+                                                               "card_month": "09",
+                                                               "card_year": "2024"]))
     }
 }

@@ -58,7 +58,7 @@ class PaymentViewModel: ObservableObject
     }
     
     func serviceCallRemove(pObj: PaymentModel){
-        ServiceCall.post(parameter: ["pay_id": pObj.id ], path: Globs.SV_REMOVE_PAYMENT_METHOD, isToken: true ) { responseObj in
+        ServiceCall.post(parameter: ["pay_id": pObj.id], path: Globs.SV_REMOVE_PAYMENT_METHOD, isToken: true ) { responseObj in
             if let response = responseObj as? NSDictionary {
                 if response.value(forKey: KKey.status) as? String ?? "" == "1" {
                     

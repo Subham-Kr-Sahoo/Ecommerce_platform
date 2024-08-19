@@ -77,7 +77,11 @@ struct AccountView: View {
                             }label: {
                                 AccountRowView(title:"Promo Code",icon:"giftcard")
                             }
-                            AccountRowView(title:"Notification",icon:"bell")
+                            NavigationLink{
+                                NotificationView()
+                            }label: {
+                                AccountRowView(title:"Notification",icon:"bell")
+                            }
                             AccountRowView(title:"Help",icon:"questionmark.circle")
                             AccountRowView(title:"About",icon:"exclamationmark.circle")
                             
