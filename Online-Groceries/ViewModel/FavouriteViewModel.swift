@@ -10,10 +10,8 @@ import SwiftUI
 
 class FavouriteViewModel : ObservableObject{
     static var shared : FavouriteViewModel = FavouriteViewModel()
-    
     @Published var showError = false
     @Published var errorMessage = ""
-    
     @Published var listArr: [ProductModel] = []
     
     init(){

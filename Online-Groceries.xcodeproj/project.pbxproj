@@ -100,6 +100,7 @@
 		91F3668F2C73B58400D6E521 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F3668E2C73B58400D6E521 /* NotificationModel.swift */; };
 		91F366912C73B6EF00D6E521 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F366902C73B6EF00D6E521 /* NotificationView.swift */; };
 		91F366932C73B8DF00D6E521 /* NotificationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F366922C73B8DF00D6E521 /* NotificationRowView.swift */; };
+		91F366972C74238000D6E521 /* ProductEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F366962C74238000D6E521 /* ProductEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +216,7 @@
 		91F3668E2C73B58400D6E521 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		91F366902C73B6EF00D6E521 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		91F366922C73B8DF00D6E521 /* NotificationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRowView.swift; sourceTree = "<group>"; };
+		91F366962C74238000D6E521 /* ProductEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +269,7 @@
 		914685C32C21C155003755C2 /* Online-Groceries */ = {
 			isa = PBXGroup;
 			children = (
+				91F366952C74236A00D6E521 /* Enum */,
 				91519A1A2C4EA64C00F8227B /* Common */,
 				914685FB2C21CA88003755C2 /* View */,
 				914685FA2C21CA85003755C2 /* Model */,
@@ -487,6 +490,14 @@
 				91F366902C73B6EF00D6E521 /* NotificationView.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		91F366952C74236A00D6E521 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				91F366962C74238000D6E521 /* ProductEnum.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -712,6 +723,7 @@
 				91519A582C5D2DD000F8227B /* FavouriteView.swift in Sources */,
 				91519A472C59201D00F8227B /* NutritionModel.swift in Sources */,
 				91519A5C2C5E704400F8227B /* FavouriteRowView.swift in Sources */,
+				91F366972C74238000D6E521 /* ProductEnum.swift in Sources */,
 				91F366892C6AC4B300D6E521 /* OrderItemRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct ExploreItemView: View {
+    @State private var selectedCategory : ProductEnum? = nil
     @State var txtSearch : String = ""
     @Environment (\.presentationMode) var mode : Binding<PresentationMode>
     @StateObject var itemsVM = ExploreItemViewModel(catObj: ExploreModel(dict: [:]))
     var columns = [GridItem(.flexible(),spacing:8),GridItem(.flexible(),spacing:8)]
     var productArray : [ProductModel] {
+        if selectedCategory == .priceHightoLow{
+            if txtSearch.isEmpty{
+                return itemsVM.listArr.sorted {$0.price > $1.price}
+            }else{
+                return itemsVM.listArr.sorted {$0.price > $1.price}.filter{$0.name.lowercased().contains(txtSearch.lowercased())}
+            }
+        }
+        if selectedCategory == .priceLowtoHigh && txtSearch.isEmpty {
+            if txtSearch.isEmpty{
+                return itemsVM.listArr.sorted {$0.price < $1.price}
+            }else{
+                return itemsVM.listArr.sorted {$0.price < $1.price}.filter{$0.name.lowercased().contains(txtSearch.lowercased())}
+            }
+        }
         if txtSearch.isEmpty {
             return itemsVM.listArr
         }
@@ -39,13 +54,42 @@ struct ExploreItemView: View {
                        .font(.customfont(.bold, fontSize: 32))
                        .padding(.top,.topInsets)
                        .frame(minWidth:0,maxWidth:.screenWidth,alignment: .center)
-                   Button{
-                       
+                   Menu{
+                       Button{
+                           selectedCategory = nil
+                       }label: {
+                           HStack{
+                               Text("Featured")
+                               if selectedCategory == nil{
+                                   Image(systemName: "checkmark")
+                               }
+                           }
+                       }
+                       Button{
+                           selectedCategory = .priceHightoLow
+                       }label: {
+                           HStack{
+                               Text("Price High to Low")
+                               if selectedCategory == .priceHightoLow {
+                                   Image(systemName: "checkmark")
+                               }
+                           }
+                       }
+                       Button{
+                           selectedCategory = .priceLowtoHigh
+                       }label: {
+                           HStack{
+                               Text("Price Low to High")
+                               if selectedCategory == .priceLowtoHigh {
+                                   Image(systemName: "checkmark")
+                               }
+                           }
+                       }
                    }label: {
-                       Image(systemName:"line.3.horizontal.decrease")
+                       Image(systemName:"line.3.horizontal.decrease.circle")
                            .resizable()
                            .scaledToFit()
-                           .frame(width:20+10,height:20+10)
+                           .frame(width:25,height:25)
                            .foregroundStyle(.black)
                    }
                    .padding(.top,50)
@@ -105,7 +149,6 @@ struct ExploreItemView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
         .ignoresSafeArea()
-        
     }
 }
 
