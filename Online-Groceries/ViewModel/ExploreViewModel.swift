@@ -13,7 +13,6 @@ class ExploreViewModel : ObservableObject {
     @Published var txtSearch: String = ""
     @Published var showError = false
     @Published var errorMessage = ""
-   
     @Published var listArr: [ExploreModel] = []
     
     init() {

@@ -14,12 +14,19 @@ struct ExploreView: View {
         GridItem(.flexible(),spacing:20),
         GridItem(.flexible(),spacing:20)
     ]
+    var exploreArray : [ExploreModel] {
+        if txtSearch.isEmpty {
+            return exploreVM.listArr
+        }else{
+            return exploreVM.listArr.filter {$0.name.lowercased().contains(txtSearch.lowercased())}
+        }
+    }
     var body: some View {
         ZStack{
             VStack{
                 HStack{
                     Spacer()
-                    Text("Find Products")
+                    Text("Find Categories")
                         .font(.customfont(.semibold, fontSize: 32))
                     Spacer()
                 }
@@ -40,6 +47,16 @@ struct ExploreView: View {
                         .autocapitalization(.none)
                         .disableAutocorrection(false)
                         .frame(minWidth: 0, maxWidth: .infinity)
+                    Spacer()
+                    if(!txtSearch.isEmpty){
+                        Button{
+                            txtSearch = ""
+                        }label: {
+                            Image(systemName:"multiply")
+                                .foregroundStyle(.pink.opacity(0.7))
+                                .padding(.trailing,10)
+                        }
+                    }
                 }
                 .frame(height: 40)
                 .padding(8)
@@ -50,7 +67,7 @@ struct ExploreView: View {
                 
                 ScrollView{
                     LazyVGrid(columns: columns,spacing:20){
-                        ForEach(exploreVM.listArr,id:\.id){ eObj in
+                        ForEach(exploreArray,id:\.id){ eObj in
                             NavigationLink{
                                 ExploreItemView(itemsVM:ExploreItemViewModel(catObj: eObj))
                             }label: {

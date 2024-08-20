@@ -12,6 +12,14 @@ struct ExploreItemView: View {
     @Environment (\.presentationMode) var mode : Binding<PresentationMode>
     @StateObject var itemsVM = ExploreItemViewModel(catObj: ExploreModel(dict: [:]))
     var columns = [GridItem(.flexible(),spacing:8),GridItem(.flexible(),spacing:8)]
+    var productArray : [ProductModel] {
+        if txtSearch.isEmpty {
+            return itemsVM.listArr
+        }
+        else{
+            return itemsVM.listArr.filter{$0.name.lowercased().contains(txtSearch.lowercased())}
+        }
+    }
     var body: some View {
         ZStack{
             VStack{
@@ -56,6 +64,17 @@ struct ExploreItemView: View {
                         .autocapitalization(.none)
                         .disableAutocorrection(false)
                         .frame(minWidth: 0, maxWidth: .infinity)
+                    
+                    Spacer()
+                    if(!txtSearch.isEmpty){
+                        Button{
+                            txtSearch = ""
+                        }label: {
+                            Image(systemName:"multiply")
+                                .foregroundStyle(.pink.opacity(0.7))
+                                .padding(.trailing,10)
+                        }
+                    }
                 }
                 .frame(height: 40)
                 .padding(8)
@@ -66,7 +85,7 @@ struct ExploreItemView: View {
                //MARK: Products lineup
                 ScrollView(showsIndicators:false){
                     LazyVGrid(columns:columns,spacing:15){
-                        ForEach(itemsVM.listArr,id:\.id){obj in
+                        ForEach(productArray,id:\.id){obj in
                             ProductCellView(pObj: obj){
                                 CartViewModel.shared.serviceCallAddToCart(prodId: obj.prodId, qty: 1) { isDone, message in
                                     self.itemsVM.showError = true
