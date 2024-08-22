@@ -10,6 +10,10 @@ import SDWebImageSwiftUI
 
 struct HomeView: View {
     @StateObject var homeVM = HomeViewModel.shared
+    @StateObject var addVM = DeliveryAddressViewModel.shared
+    var filetredAddress : [AddressModel] {
+        return addVM.AddressArray.filter {$0.isDefault == 1}
+    }
     var body: some View {
         ZStack{
             ScrollView{
@@ -28,9 +32,22 @@ struct HomeView: View {
                             .padding(.bottom,4)
                             .padding(.trailing,0)
                             .foregroundStyle(Color(hex: "36454F"))
-                        Text("Burla, Sambalpur")
-                            .font(.customfont(.medium, fontSize:20-4))
-                            .foregroundStyle(Color(hex: "36454F"))
+                        if filetredAddress.count > 0{
+                            ForEach(filetredAddress){ address in
+                                Text(address.city)
+                                    .font(.customfont(.medium, fontSize:20-4))
+                                    .foregroundStyle(Color(hex: "36454F"))
+                            }
+                        }else{
+                            VStack {
+                                Text("           Add Your")
+                                    .font(.customfont(.medium, fontSize:14))
+                                    .foregroundStyle(Color(.systemGray4))
+                                Text("Default Address")
+                                    .font(.customfont(.medium, fontSize:14))
+                                    .foregroundStyle(Color(.systemGray4))
+                            }
+                        }
                     }
                     .padding(.horizontal,30)
                     SearchTextField(txt: $homeVM.txtSearch)

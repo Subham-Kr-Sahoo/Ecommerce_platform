@@ -33,11 +33,13 @@ struct FavouriteView: View {
                 .shadow(color: .black.opacity(0.1), radius:30)
                 Spacer()
                 
-                RoundedButton(title:"Add to Cart"){
-                    
-                }
+                if favVM.listArr.count > 0 {
+                    RoundedButton(title:"Add to Cart"){
+                        
+                    }
                     .padding(.horizontal,20)
                     .padding(.bottom,.bottomInsets+80)
+                }
             }
         }
         .onAppear{
