@@ -15,23 +15,6 @@ struct SignupView: View {
             Image("bottom_bg")
                 .resizable()
                 .frame(width:.screenWidth,height:.screenHeight)
-            //back button
-            VStack{
-                HStack{
-                    Button{
-                        mode.wrappedValue.dismiss()
-                    }label: {
-                        Image("back")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width:20,height:20)
-                    }
-                    .padding(.top,50)
-                    .padding(.leading,20+10)
-                   Spacer()
-                }
-                Spacer()
-            }
             
             ScrollView{
                 VStack{
@@ -94,10 +77,6 @@ struct SignupView: View {
                         signupVM.serviceCallSignup()
                     }
                     .padding(.bottom,.screenWidth * 0.02)
-                    
-                    NavigationLink{
-                        
-                    }label: {
                         HStack{
                             Text("Already have an account ?")
                                 .font(.customfont(.semibold, fontSize:18))
@@ -117,7 +96,7 @@ struct SignupView: View {
                                 }
                             }
                         }
-                    }
+                    
                     
                     Spacer()
 
@@ -126,6 +105,23 @@ struct SignupView: View {
                     .padding(.bottom,.bottomInsets)
                     .padding(.horizontal,20)
                 
+            }
+            
+            VStack{
+                HStack{
+                    Button{
+                        mode.wrappedValue.dismiss()
+                    }label: {
+                        Image("back")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width:20,height:20)
+                    }
+                    .padding(.top,50)
+                    .padding(.leading,20+10)
+                   Spacer()
+                }
+                Spacer()
             }
             
         }.alert(isPresented: $signupVM.showError,content: {

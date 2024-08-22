@@ -40,7 +40,6 @@ class ServiceCall {
                 #else
                 request.addValue(MainViewModel.shared.userObj.authToken , forHTTPHeaderField: "access_token")
                 #endif
-                
             }
             request.httpMethod = "POST"
             request.httpBody = parameterData as Data
