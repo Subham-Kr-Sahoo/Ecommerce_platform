@@ -14,21 +14,26 @@ struct DeliveryAddressView: View {
     var didSelect:( (_ obj: AddressModel) -> () )?
     var body: some View {
         ZStack{
-            ScrollView{
-                LazyVStack{
-                    ForEach(addressVM.AddressArray,id:\.id){
-                        AddObj in
-                        AddressRowView(addressObj: AddObj)
-                        .onTapGesture {
-                            if(isPicker) {
-                                mode.wrappedValue.dismiss()
-                                didSelect?(AddObj)
+            if addressVM.AddressArray.count == 0 {
+                Text("Add a Delivery Address")
+                    .font(.customfont(.semibold, fontSize: 18))
+            }else{
+                ScrollView{
+                    LazyVStack{
+                        ForEach(addressVM.AddressArray,id:\.id){
+                            AddObj in
+                            AddressRowView(addressObj: AddObj)
+                            .onTapGesture {
+                                if(isPicker) {
+                                    mode.wrappedValue.dismiss()
+                                    didSelect?(AddObj)
+                                }
                             }
                         }
                     }
                 }
+                .padding(.top,.topInsets+50)
             }
-            .padding(.top,.topInsets+60)
             //back button and plus button
             VStack {
                 HStack{

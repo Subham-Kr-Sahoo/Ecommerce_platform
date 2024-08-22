@@ -14,20 +14,30 @@ struct PaymentView: View {
     var didSelect:( (_ obj: PaymentModel) -> () )?
     var body: some View {
         ZStack{
-            ScrollView{
-                LazyVStack{
-                    ForEach(payVM.listArr,id:\.id){payObj in
-                        PaymentRowView(CardObj:payObj)
-                            .onTapGesture {
-                            if(isPicker) {
-                                mode.wrappedValue.dismiss()
-                                didSelect?(payObj)
+            if payVM.listArr.count == 0{
+                VStack {
+                    Text("Add your card details")
+                        .font(.customfont(.semibold, fontSize: 18))
+                    Text("we don't keep your any card details")
+                        .font(.customfont(.medium, fontSize: 16))
+                        .foregroundStyle(Color(.systemGray2))
+                }
+            }else{
+                ScrollView{
+                    LazyVStack{
+                        ForEach(payVM.listArr,id:\.id){payObj in
+                            PaymentRowView(CardObj:payObj)
+                                .onTapGesture {
+                                if(isPicker) {
+                                    mode.wrappedValue.dismiss()
+                                    didSelect?(payObj)
+                                }
                             }
                         }
                     }
                 }
+                .padding(.top,.topInsets+60)
             }
-            .padding(.top,.topInsets+60)
             //back button and plus button
             VStack {
                 HStack{
