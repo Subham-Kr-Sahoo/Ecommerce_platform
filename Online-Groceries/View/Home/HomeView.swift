@@ -14,6 +14,16 @@ struct HomeView: View {
     var filetredAddress : [AddressModel] {
         return addVM.AddressArray.filter {$0.isDefault == 1}
     }
+    var filterProduct : [ProductModel] {
+        let newArr = homeVM.offerArr + homeVM.listArr + homeVM.bestArr
+        let emptyArr : [ProductModel] = []
+        if !homeVM.txtSearch.isEmpty {
+            return newArr.filter {$0.name.lowercased().hasPrefix(homeVM.txtSearch.lowercased())}
+        }
+        else{
+            return emptyArr
+        }
+    }
     var body: some View {
         ZStack{
             ScrollView{
@@ -50,9 +60,43 @@ struct HomeView: View {
                         }
                     }
                     .padding(.horizontal,30)
-                    SearchTextField(txt: $homeVM.txtSearch)
-                        .padding(.horizontal,23)
-                        .padding(.bottom,-10)
+                    HStack {
+                        SearchTextField(txt: $homeVM.txtSearch)
+                            .padding(.horizontal,23)
+                            .padding(.bottom,-10)
+                        
+                        if !homeVM.txtSearch.isEmpty{
+                            Button{
+                                withAnimation(.easeInOut){
+                                    homeVM.txtSearch = ""
+                                }
+                            }label: {
+                                Image(systemName:"trash")
+                                    .resizable()
+                                    .frame(width:25,height:25)
+                                    .foregroundStyle(.pink.opacity(0.7))
+                                    .padding(.trailing,20)
+                                    .padding(.leading,-20)
+                            }
+                        }
+                    }
+                    
+                    if !homeVM.txtSearch.isEmpty{
+                            ScrollView(.horizontal,showsIndicators: false){
+                                LazyHStack(spacing:10){
+                                    ForEach(filterProduct,id: \.id){pObj in
+                                        ProductCellView(pObj: pObj,didAddCart: {
+                                            CartViewModel.shared.serviceCallAddToCart(prodId: pObj.prodId, qty: 1) { isDone, message in
+                                                self.homeVM.showError = true
+                                                self.homeVM.errorMessage = message
+                                            }
+                                        })
+                                    }
+                                }.padding(.horizontal,25)
+                                .padding(.top,10)
+                                .padding(.bottom,0)
+                        }
+                    }
                     
                     ImageSliderViews()
                     // MARK: Exclusive offer
