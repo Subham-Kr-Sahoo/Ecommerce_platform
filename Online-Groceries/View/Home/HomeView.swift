@@ -44,7 +44,7 @@ struct HomeView: View {
                             .foregroundStyle(Color(hex: "36454F"))
                         if filetredAddress.count > 0{
                             ForEach(filetredAddress){ address in
-                                Text(address.city + "," + address.state)
+                                Text(address.city + ", " + address.state)
                                     .font(.customfont(.medium, fontSize:20-4))
                                     .foregroundStyle(Color(hex: "36454F"))
                             }

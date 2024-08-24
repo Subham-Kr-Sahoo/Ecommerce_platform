@@ -35,7 +35,9 @@ struct AccountView: View {
                                 .padding(.trailing,35)
                                 .frame(width:250,alignment:.leading)
                         }
-                    
+                        .onAppear(perform: {
+                            accVM.serviceCallName()
+                        })
                     Button{
                         // i have to make a page specifically to update the username and email and have specifically to update the user image
                     }label: {
@@ -61,7 +63,11 @@ struct AccountView: View {
                             }label: {
                                 AccountRowView(title:"Orders",icon:"bag")
                             }
-                            AccountRowView(title:"My Details",icon:"person.text.rectangle")
+                            NavigationLink{
+                                MyDetailsView()
+                            }label: {
+                                AccountRowView(title:"My Details",icon:"person.text.rectangle")
+                            }
                             NavigationLink{
                                 DeliveryAddressView()
                             }label: {
