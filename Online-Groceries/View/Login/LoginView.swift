@@ -41,8 +41,8 @@ struct LoginView: View {
                 LineSecureField(txt:$loginVM.txtPassword, isShowPassword: $loginVM.isShowPassword , title: "Password", placeholder: "Enter your Password")
                     .padding(.bottom,.screenWidth * 0.08)
                     
-                Button{
-                    
+                NavigationLink{
+                    ForgotPasswordView()
                 }label: {
                     Text("Forgot Password ?")
                         .font(.customfont(.medium, fontSize:18))
