@@ -16,12 +16,15 @@ struct ChangePasswordView: View {
                 VStack(spacing: 15){
                     LineSecureField(txt: $myVM.txtCurrentPassword, isShowPassword: $myVM.isCurrentPassword,title: "Current Password", placeholder: "Enter your current password")
                         .padding(.bottom, .screenWidth * 0.02)
+                        .textInputAutocapitalization(TextInputAutocapitalization.never)
                     
                     LineSecureField(txt: $myVM.txtNewPassword, isShowPassword: $myVM.isNewPassword,title: "New Password", placeholder: "Enter your New password")
                         .padding(.bottom, .screenWidth * 0.02)
+                        .textInputAutocapitalization(TextInputAutocapitalization.never)
                     
                     LineSecureField(txt: $myVM.txtConfirmPassword, isShowPassword: $myVM.isConfirmPassword,title: "Confirm Password", placeholder: "Enter your Confirm password")
                         .padding(.bottom, .screenWidth * 0.02)
+                        .textInputAutocapitalization(TextInputAutocapitalization.never)
                     
                     RoundedButton(title: "Update") {
                         myVM.serviceCallChangePassword()

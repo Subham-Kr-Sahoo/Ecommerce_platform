@@ -47,7 +47,7 @@ struct MyDetailsView: View {
                     }
                     .padding(.bottom, 45)
                     NavigationLink {
-                        //ChangePasswordView()
+                        ChangePasswordView()
                     } label: {
                         Text("Change Password")
                             .font(.customfont(.bold, fontSize: 18))
@@ -95,5 +95,7 @@ struct MyDetailsView: View {
 }
 
 #Preview {
-    MyDetailsView()
+    NavigationView {
+        MyDetailsView()
+    }
 }
