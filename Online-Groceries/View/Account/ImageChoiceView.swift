@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ImageChoiceView: View {
+    @AppStorage("selectedImageName") private var selectedImageName: String = "person.fill"
+    @AppStorage("selectedBackgroundColor") private var selectedBackgroundColor : String = "D1D0CF"
+    @AppStorage("usedName") private var usedName : String = "Human Icon"
+    @AppStorage("number") private var number : Int = 1
     let userDefaultImage : UserImageModel = UserImageModel(name: "Human Icon", image: "person.fill", backgroundColor: "D1D0CF", number: 1)
     @State var showSheet : Bool = false
     @State private var selectedImage: UserImageModel = UserImageModel(name: "Human Icon", image: "person.fill", backgroundColor: "D1D0CF", number: 1)
@@ -29,6 +33,9 @@ struct ImageChoiceView: View {
                     .sheet(isPresented: $showSheet, content: {
                         ImagePickerSheetView(showSheet: $showSheet, selectedImage: $selectedImage)
                     })
+                    .onAppear(perform: {
+                        selectedImage = UserImageModel(name: usedName, image: selectedImageName, backgroundColor: selectedBackgroundColor, number: number)
+                    })
             }
             else if selectedImage.number == 1 {
                 Image(systemName: selectedImage.image)
@@ -46,12 +53,19 @@ struct ImageChoiceView: View {
                     .sheet(isPresented:$showSheet) {
                         ImagePickerSheetView(showSheet: $showSheet, selectedImage: $selectedImage)
                     }
+                    .onAppear(perform: {
+                        selectedImage = UserImageModel(name: usedName, image: selectedImageName, backgroundColor: selectedBackgroundColor, number: number)
+                    })
             }
         }
     }
 }
 
 struct ImagePickerSheetView : View {
+    @AppStorage("selectedImageName") private var selectedImageName: String = "person.fill"
+    @AppStorage("selectedBackgroundColor") private var selectedBackgroundColor : String = "D1D0CF"
+    @AppStorage("usedName") private var usedName : String = "Human Icon"
+    @AppStorage("number") private var number : Int = 1
     @Binding var showSheet : Bool
     @Binding var selectedImage : UserImageModel
     let userDefaultImage : UserImageModel = UserImageModel(name: "Human Icon", image: "person.fill", backgroundColor: "D1D0CF", number: 1)
@@ -83,6 +97,10 @@ struct ImagePickerSheetView : View {
                                     }
                                     .onTapGesture {
                                     selectedImage = image
+                                    selectedImageName = image.image
+                                    selectedBackgroundColor = image.backgroundColor
+                                    usedName = image.name
+                                    number = image.number
                                 }
                                 Text(image.name)
                                     .font(.customfont(.medium, fontSize: 16))
@@ -106,6 +124,10 @@ struct ImagePickerSheetView : View {
                                     }
                                     .onTapGesture {
                                     selectedImage = image
+                                    selectedImageName = image.image
+                                    selectedBackgroundColor = image.backgroundColor
+                                    usedName = image.name
+                                    number = image.number
                                 }
                                 Text(image.name)
                                     .font(.customfont(.medium, fontSize: 16))
@@ -122,6 +144,10 @@ struct ImagePickerSheetView : View {
                 showSheet = false
             })
             .navigationBarItems(leading: Button("Clear"){
+                selectedImageName = "person.fill"
+                selectedBackgroundColor = "D1D0CF"
+                usedName = "Human Icon"
+                number = 1
                 showSheet = false
                 selectedImage = userDefaultImage
             })
