@@ -15,6 +15,7 @@
 		910A2D722C7D0FC600C3EACA /* ForgotPasswordSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910A2D712C7D0FC600C3EACA /* ForgotPasswordSetView.swift */; };
 		910A2D742C7D0FDE00C3EACA /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910A2D732C7D0FDE00C3EACA /* OTPView.swift */; };
 		910A2D782C7D38D500C3EACA /* OTPScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910A2D772C7D38D500C3EACA /* OTPScreenView.swift */; };
+		910A2D7A2C7D871F00C3EACA /* WriteReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910A2D792C7D871F00C3EACA /* WriteReviewView.swift */; };
 		914685C52C21C155003755C2 /* Online_GroceriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914685C42C21C155003755C2 /* Online_GroceriesApp.swift */; };
 		914685CC2C21C157003755C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 914685CB2C21C157003755C2 /* Preview Assets.xcassets */; };
 		914685D62C21C157003755C2 /* Online_GroceriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914685D52C21C157003755C2 /* Online_GroceriesTests.swift */; };
@@ -137,6 +138,7 @@
 		910A2D712C7D0FC600C3EACA /* ForgotPasswordSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSetView.swift; sourceTree = "<group>"; };
 		910A2D732C7D0FDE00C3EACA /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		910A2D772C7D38D500C3EACA /* OTPScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPScreenView.swift; sourceTree = "<group>"; };
+		910A2D792C7D871F00C3EACA /* WriteReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewView.swift; sourceTree = "<group>"; };
 		914685C12C21C155003755C2 /* Online-Groceries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online-Groceries.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		914685C42C21C155003755C2 /* Online_GroceriesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_GroceriesApp.swift; sourceTree = "<group>"; };
 		914685CB2C21C157003755C2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -512,6 +514,7 @@
 				91F366902C73B6EF00D6E521 /* NotificationView.swift */,
 				910A2D6B2C795AF700C3EACA /* ChangePasswordView.swift */,
 				910A2D692C79583900C3EACA /* MyDetailsView.swift */,
+				910A2D792C7D871F00C3EACA /* WriteReviewView.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				91519A4D2C5A8FAA00F8227B /* PrivacyPolicyView.swift in Sources */,
 				9174FD502C64383E004B0011 /* AddDeliveryAddressView.swift in Sources */,
 				91DD964D2C5FEE23005528F5 /* ExploreItemViewModel.swift in Sources */,
+				910A2D7A2C7D871F00C3EACA /* WriteReviewView.swift in Sources */,
 				914686112C22D349003755C2 /* MainViewModel.swift in Sources */,
 				91519A232C4FE6AC00F8227B /* MainTabView.swift in Sources */,
 				91F366852C6AC12100D6E521 /* OrderItemModel.swift in Sources */,

@@ -48,6 +48,7 @@ struct Globs {
     static let SV_FORGOT_PASSWORD_VERIFY = BASE_URL + "forgot_password_verify"
     static let SV_FORGOT_PASSWORD_SET_PASSWORD = BASE_URL + "forgot_password_set_password"
     static let SV_NAME_AND_EMAIL = BASE_URL + "user_name"
+    static let SV_REVIEW_ADD = BASE_URL + "order_product_review_add"
 }
 
 struct KKey {

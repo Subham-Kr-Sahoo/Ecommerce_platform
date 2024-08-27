@@ -25,14 +25,36 @@ struct ProductCellView: View {
 
                     Spacer()
                 
-                    Text(pObj.name)
-                        .font(.customfont(.semibold, fontSize:16))
-                        .foregroundStyle(Color(hex:"3c3c3c"))
-                        .frame(minWidth:0,maxWidth:.infinity,alignment: .leading)
-                    Text("\(pObj.unitValue)"+" \(pObj.unitName)")
-                        .font(.customfont(.regular, fontSize:14))
-                        .foregroundStyle(Color(hex:"7b7b7b"))
-                        .frame(minWidth:0,maxWidth:.infinity,alignment: .leading)
+                    VStack{
+                        Text(pObj.name)
+                            .font(.customfont(.semibold, fontSize:16))
+                            .foregroundStyle(Color(hex:"3c3c3c"))
+                            .frame(minWidth:0,maxWidth:.infinity,alignment: .leading)
+                        HStack {
+                            Text("\(pObj.unitValue)"+" \(pObj.unitName)")
+                                .font(.customfont(.regular, fontSize:14))
+                                .foregroundStyle(Color(hex:"7b7b7b"))
+                            .frame(minWidth:0,maxWidth:.infinity,alignment: .leading)
+                            
+                            if pObj.avgRating > 0 {
+                                HStack(spacing:4){
+                                    Text("\(pObj.avgRating)")
+                                        .font(.customfont(.semibold, fontSize:14))
+                                        .foregroundStyle(Color.yellow)
+                                    Image(systemName: "star.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width:14,height:14)
+                                        .padding(.bottom,4)
+                                        .foregroundStyle(Color.yellow)
+                                }
+                                .padding(.trailing)
+                                
+                            }else{
+                                
+                            }
+                        }
+                    }
                     
                     HStack{
                         if(pObj.offerPrice ?? pObj.price < pObj.price){

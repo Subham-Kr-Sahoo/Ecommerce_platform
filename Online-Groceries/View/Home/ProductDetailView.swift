@@ -239,41 +239,30 @@ struct ProductDetailView: View {
                 }
                     .padding(.horizontal, 20)
                 //MARK: Review details
-                VStack{
-                    HStack{
-                        Text("Reviews")
-                            .font(.customfont(.semibold, fontSize: 24))
-                            .foregroundStyle(Color.primaryText)
-                            .frame(minWidth:0,maxWidth:.screenWidth,alignment: .leading)
-                        
-                        HStack(spacing: 2){
-                           ForEach( 1...5 , id: \.self) { index in
-                               Image(systemName:  "star.fill")
-                                   .resizable()
-                                   .scaledToFit()
-                                   .foregroundColor( Color.orange)
-                                   .frame(width: 15, height: 15)
-                           }
-                       }
-                        Button{
-                            withAnimation {
-                                
+                if detailVM.pObj.avgRating > 0 {
+                    VStack{
+                        HStack{
+                            Text("Reviews")
+                                .font(.customfont(.semibold, fontSize: 24))
+                                .foregroundStyle(Color.primaryText)
+                                .frame(minWidth:0,maxWidth:.screenWidth,alignment: .leading)
+                            
+                            HStack(spacing: 2){
+                                ForEach( 1...detailVM.pObj.avgRating, id: \.self) { index in
+                                    Image(systemName:  "star.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundColor( Color.orange)
+                                        .frame(width: 15, height: 15)
+                                }
                             }
-                        }label: {
-                            Image(systemName:"chevron.right")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width:20,height:20)
-                                .foregroundStyle(.black)
-                                .rotationEffect(.degrees(detailVM.isShowDetail ? 90 : 0), anchor: .center)
-                                .animation(.easeInOut(duration:0.2), value: detailVM.isShowDetail)
                         }
-                    }
-                    Divider()
-                        .padding(.vertical,10)
+                        Divider()
+                            .padding(.vertical,10)
                         
+                    }
+                    .padding(.horizontal,20)
                 }
-                .padding(.horizontal,20)
                 //MARK: Add to basket button
                 RoundedButton(title:"Add to basket"){
                     CartViewModel.shared.serviceCallAddToCart(prodId:detailVM.pObj.prodId,qty: detailVM.qty) { isDone, message in

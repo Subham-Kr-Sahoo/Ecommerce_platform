@@ -10,7 +10,7 @@ import SDWebImageSwiftUI
 
 struct OrderItemRowView: View {
     @State var pObj: OrderItemModel = OrderItemModel(dict: [:])
-    var showReviewBotton = false
+    var showReviewButton = false
     var didTap: ( ()->() )?
     
     var body: some View {
@@ -66,14 +66,11 @@ struct OrderItemRowView: View {
                 
                 
             }
-            
-            if showReviewBotton {
-                RoundedButton(title: "Write a review" ) {
+            if showReviewButton {
+                RoundedButton(title:"Write a review"){
                     didTap?()
                 }
             }
-           
-            
         }
             .padding(15)
             .background(Color.white)

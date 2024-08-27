@@ -56,7 +56,7 @@ struct OrderItemModel:  Identifiable, Equatable {
         self.totalPrice = dict.value(forKey: "total_price") as? Int ?? 0
         self.startDate = (dict.value(forKey: "start_date") as? String ?? "").stringDatetodate() ?? Date()
         self.endDate = (dict.value(forKey: "end_date") as? String ?? "").stringDatetodate() ?? Date()
-        self.rating =  Int(dict.value(forKey: "rating") as? Double ?? 0.0)
+        self.rating =  Int("\(dict.value(forKey: "rating") ?? "")") ?? 0
         self.message = dict.value(forKey: "message") as? String ?? ""
     }
     

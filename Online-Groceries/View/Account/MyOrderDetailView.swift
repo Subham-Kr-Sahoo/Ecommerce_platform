@@ -11,7 +11,6 @@ import SDWebImageSwiftUI
 struct MyOrderDetailView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @StateObject var detailVM: MyOrderDetailViewModel = MyOrderDetailViewModel(prodObj: MyOrderModel(dict: [:]) )
-    @State var showWriteReview = false
     var body: some View{
         ZStack{
             ScrollView{
@@ -69,8 +68,8 @@ struct MyOrderDetailView: View {
                 .padding(.top, .topInsets + 56)
                 LazyVStack {
                     ForEach(detailVM.listArr, id: \.id) { pObj in
-                        OrderDetailRowView(pObj: pObj, showReviewButton: detailVM.pObj.orderStatus == 3 && pObj.rating == 0) {
-                            showWriteReview = true
+                        OrderDetailRowView(pObj: pObj, showReviewButton: detailVM.pObj.orderStatus == 3 && pObj.rating == 0){
+                            detailVM.actionWriteReview(obj: pObj)
                         }
                     }
                 }
@@ -158,6 +157,9 @@ struct MyOrderDetailView: View {
         .alert(isPresented: $detailVM.showError, content: {
             Alert(title: Text(Globs.AppName), message: Text(detailVM.errorMessage), dismissButton: .default(Text("Ok"))  )
         })
+        .background(NavigationLink(destination: WriteReviewView(myOrderVM: detailVM),isActive:$detailVM.showWriteReview,label: {
+            EmptyView()
+        }))
         .navigationTitle("")
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
@@ -257,33 +259,35 @@ struct MyOrderDetailView: View {
     }
 }
 #Preview {
-    MyOrderDetailView(detailVM: MyOrderDetailViewModel(prodObj: MyOrderModel(dict: ["order_id": 4,
-                                                                                    "cart_id": 37,
-                                                                                    "user_id": 4,
-                                                                                    "prod_id": 1,
-                                                                                    "qty": 1,
-                                                                                    "cat_id": 1,
-                                                                                    "brand_id": 1,
-                                                                                    "type_id": 1,
-                                                                                    "name": "Wizard",
-                                                                                    "detail": "Wizard Baby",
-                                                                                    "unit_name": "KG",
-                                                                                    "unit_value": "2",
-                                                                                    "nutrition_weight": "400g",
-                                                                                    "price": 6,
-                                                                                    "created_date": "2024-07-03T04:25:10.000Z",
-                                                                                    "modify_date": "2024-07-03T04:25:10.000Z",
-                                                                                    "cat_name": "fruits",
-                                                                                    "is_fav": 0,
-                                                                                    "brand_name": "bigies",
-                                                                                    "type_name": "BarbarianKing",
-                                                                                    "offer_price": 6,
-                                                                                    "start_date": "",
-                                                                                    "end_date": "",
-                                                                                    "is_offer_active": 0,
-                                                                                    "image": "http://localhost:3001/img/product/2024070319565656563fxJquql86GwlQvA1ZVf.png",
-                                                                                    "item_price": 6,
-                                                                                    "total_price": 6,
-                                                                                    "rating": 0,
-                                                                                    "review_message": ""])))
+    NavigationView {
+        MyOrderDetailView(detailVM: MyOrderDetailViewModel(prodObj: MyOrderModel(dict: ["order_id": 4,
+                                                                                        "cart_id": 37,
+                                                                                        "user_id": 4,
+                                                                                        "prod_id": 1,
+                                                                                        "qty": 1,
+                                                                                        "cat_id": 1,
+                                                                                        "brand_id": 1,
+                                                                                        "type_id": 1,
+                                                                                        "name": "Wizard",
+                                                                                        "detail": "Wizard Baby",
+                                                                                        "unit_name": "KG",
+                                                                                        "unit_value": "2",
+                                                                                        "nutrition_weight": "400g",
+                                                                                        "price": 6,
+                                                                                        "created_date": "2024-07-03T04:25:10.000Z",
+                                                                                        "modify_date": "2024-07-03T04:25:10.000Z",
+                                                                                        "cat_name": "fruits",
+                                                                                        "is_fav": 0,
+                                                                                        "brand_name": "bigies",
+                                                                                        "type_name": "BarbarianKing",
+                                                                                        "offer_price": 6,
+                                                                                        "start_date": "",
+                                                                                        "end_date": "",
+                                                                                        "is_offer_active": 0,
+                                                                                        "image": "http://localhost:3001/img/product/2024070319565656563fxJquql86GwlQvA1ZVf.png",
+                                                                                        "item_price": 6,
+                                                                                        "total_price": 6,
+                                                                                        "rating": 0,
+                                                                                        "review_message": ""])))
+    }
 }

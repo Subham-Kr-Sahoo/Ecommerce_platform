@@ -57,7 +57,7 @@ struct ProductModel:  Identifiable, Equatable {
         self.totalPrice = dict.value(forKey: "total_price") as? Int ?? 0
         self.startDate = (dict.value(forKey: "start_date") as? String ?? "").stringDatetodate() ?? Date()
         self.endDate = (dict.value(forKey: "end_date") as? String ?? "").stringDatetodate() ?? Date()
-        self.avgRating =  Int(dict.value(forKey: "avg_rating") as? Double ?? 0.0)
+        self.avgRating =  Int("\(dict.value(forKey: "avg_rating") ?? "")") ?? 0
     }
     
     static func == (lhs: ProductModel, rhs: ProductModel) -> Bool {
