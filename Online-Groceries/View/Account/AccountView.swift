@@ -78,7 +78,11 @@ struct AccountView: View {
                             }label: {
                                 AccountRowView(title:"Help",icon:"questionmark.circle")
                             }
-                            AccountRowView(title:"About",icon:"exclamationmark.circle")
+                            NavigationLink{
+                                AboutView()
+                            }label: {
+                                AccountRowView(title:"About",icon:"exclamationmark.circle")
+                            }
                             
                             Button{
                                 MainViewModel.shared.logout()

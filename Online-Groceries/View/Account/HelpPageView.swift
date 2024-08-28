@@ -11,7 +11,7 @@ struct HelpPageView: View {
     @Environment(\.presentationMode) var mode : Binding<PresentationMode>
     var body: some View {
         ZStack{
-            ScrollView{
+            ScrollView(showsIndicators:false){
                 VStack(alignment: .leading, spacing: 20){
                       SectionsView(
                           title: "Welcome to Our E-Commerce App",
@@ -115,8 +115,10 @@ struct SectionsView: View {
                 .foregroundColor(.gray)
         }
         .padding()
+        .frame(width:.screenWidth-30)
         .background(Color(UIColor.systemGray6))
         .cornerRadius(16)
+        
     }
 }
 
