@@ -70,8 +70,9 @@ struct CheckOutView: View {
                                     Image(systemName: "chevron.right")
                             }
                         }
+                        Divider()
                     }
-                    Divider()
+
                     //MARK: payment type check
                     HStack{
                         Text("Payment Method")

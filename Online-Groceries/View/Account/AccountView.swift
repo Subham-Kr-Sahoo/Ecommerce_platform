@@ -73,7 +73,11 @@ struct AccountView: View {
                             }label: {
                                 AccountRowView(title:"Notification",icon:"bell")
                             }
-                            AccountRowView(title:"Help",icon:"questionmark.circle")
+                            NavigationLink{
+                                HelpPageView()
+                            }label: {
+                                AccountRowView(title:"Help",icon:"questionmark.circle")
+                            }
                             AccountRowView(title:"About",icon:"exclamationmark.circle")
                             
                             Button{
