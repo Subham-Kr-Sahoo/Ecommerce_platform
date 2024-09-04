@@ -10,12 +10,18 @@ import SDWebImageSwiftUI
 
 struct FavouriteView: View {
     @StateObject var favVM = FavouriteViewModel.shared
+    @StateObject var cartVM = CartViewModel.shared
     var body: some View {
         ZStack{
             ScrollView{
                 LazyVStack{
                     ForEach(favVM.listArr,id:\.id){ fObj in
-                        FavouriteRowView(fObj: fObj)
+                        FavouriteRowView(fObj: fObj,detailVM:ProductDetailViewModel(prodObj:fObj)) {
+                            cartVM.serviceCallAddToCart(prodId: fObj.prodId, qty: 1) { isDone, message in
+                                self.favVM.showError = true
+                                self.favVM.errorMessage = message
+                            }
+                        }
                     }
                 }.padding(20)
             }.padding(.top,.topInsets+30)
@@ -33,15 +39,11 @@ struct FavouriteView: View {
                 .shadow(color: .black.opacity(0.1), radius:30)
                 Spacer()
                 
-                if favVM.listArr.count > 0 {
-                    RoundedButton(title:"Add to Cart"){
-                        
-                    }
-                    .padding(.horizontal,20)
-                    .padding(.bottom,.bottomInsets+80)
-                }
             }
         }
+        .alert(isPresented: $favVM.showError, content: {
+            Alert(title: Text(Globs.AppName), message: Text(favVM.errorMessage), dismissButton: .default(Text("OK")) )
+        })
         .onAppear{
             favVM.serviceCallList()
         }

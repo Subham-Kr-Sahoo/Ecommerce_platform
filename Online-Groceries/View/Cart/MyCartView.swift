@@ -91,6 +91,7 @@ struct MyCartView: View {
                                  .background( Color.primaryApp)
                                  .cornerRadius(20)
                                  .padding(.horizontal, 20)
+                                 .padding(.bottom,15)
                          }
                          
                      }

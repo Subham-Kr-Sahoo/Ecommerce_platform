@@ -68,6 +68,7 @@ struct AddressRowView: View {
                     
                     Button(action: {
                         addressVM.serviceCallMarkasDefault(Address: addressObj)
+                        addressVM.serviceCallList()
                     }) {
                         Text(addressObj.isDefault == 1 ? "Remove as default" : "Set as Default")
                             .foregroundColor(.black)

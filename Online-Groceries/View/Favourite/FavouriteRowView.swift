@@ -10,6 +10,9 @@ import SDWebImageSwiftUI
 
 struct FavouriteRowView: View {
     @State var fObj: ProductModel = ProductModel(dict: [:])
+    @StateObject var detailVM : ProductDetailViewModel = ProductDetailViewModel(prodObj:ProductModel(dict:[:]))
+    @StateObject var favVM = FavouriteViewModel.shared
+    var didAddCart : (()->())?
     var body: some View {
         VStack{
             HStack(spacing:15){
@@ -30,6 +33,25 @@ struct FavouriteRowView: View {
                         .foregroundStyle(Color(hex:"7b7b7b"))
                         .frame(minWidth:0,maxWidth:.infinity,alignment: .leading)
                 }
+                
+                Button(action: {
+                    didAddCart?()
+                    detailVM.serviceCallAddRemoveFav()
+                    favVM.serviceCallList()
+                }) {
+                    Text("ADD")
+                        .font(.customfont(.medium, fontSize:10))
+                        .foregroundColor(Color(hex:"022602"))
+                        .padding(.horizontal)
+                        .padding(.vertical,8)
+                        .background(Color(hex:"c8fcc7"))
+                        .cornerRadius(8)
+                        .overlay(
+                            RoundedRectangle(cornerRadius:8)
+                                .stroke(Color(hex:"044203"), lineWidth: 1.5)
+                        )
+                }
+                .padding(.trailing)
                 
                 Text("₹"+"\(fObj.offerPrice ?? fObj.price)")
                 .font(.customfont(.semibold, fontSize:18))
