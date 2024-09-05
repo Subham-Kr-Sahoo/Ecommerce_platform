@@ -60,6 +60,7 @@ struct MyCartView: View {
                     }
                     .padding(20)
                     .padding(.top,100)
+                    .padding(.bottom,160)
                 }
             }
              
