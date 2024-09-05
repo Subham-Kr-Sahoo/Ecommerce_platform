@@ -99,47 +99,86 @@ struct HomeView: View {
                     }
                     
                     ImageSliderViews()
+                        .padding(.bottom,homeVM.offerArr.count == 0 ? -30 : 0)
                     // MARK: Exclusive offer
-                    SectionTitleView(title: "Exclusive offer",titleall: "See All"){
-                        
-                    }.padding(.horizontal,10)
-                    .padding(.vertical,-40)
-                    
-                    ScrollView(.horizontal,showsIndicators: false){
-                        LazyHStack(spacing:10){
-                            ForEach(homeVM.offerArr,id: \.id){pObj in
-                                ProductCellView(pObj: pObj,didAddCart: {
-                                    CartViewModel.shared.serviceCallAddToCart(prodId: pObj.prodId, qty: 1) { isDone, message in
-                                        self.homeVM.showError = true
-                                        self.homeVM.errorMessage = message
-                                    }
-                                })
+                    if homeVM.offerArr.count > 0 {
+                        HStack {
+                            SectionTitleView(title: "Exclusive offer"){
+                                
+                            }.padding(.horizontal,10)
+                                .padding(.vertical,-40)
+                            
+                            NavigationLink{
+                                BestSellingView()
+                            }label: {
+                                Text("See All")
+                                    .font(.customfont(.semibold, fontSize: 16))
+                                    .foregroundStyle(Color.primaryApp)
+                                    .frame(height:40)
+                                    .padding(.trailing,25)
+                                    .padding(.vertical,-40)
                             }
-                        }.padding(.horizontal,25)
+                        }
+                        ScrollView(.horizontal,showsIndicators: false){
+                            LazyHStack(spacing:10){
+                                ForEach(homeVM.offerArr,id: \.id){pObj in
+                                    ProductCellView(pObj: pObj,didAddCart: {
+                                        CartViewModel.shared.serviceCallAddToCart(prodId: pObj.prodId, qty: 1) { isDone, message in
+                                            self.homeVM.showError = true
+                                            self.homeVM.errorMessage = message
+                                        }
+                                    })
+                                }
+                            }.padding(.horizontal,25)
+                        }
                     }
-                    
                     // MARK: Best Selling
-                    SectionTitleView(title: "Best Selling",titleall: "See All"){
-                        
-                    }.padding(.horizontal,10)
-                    
-                    ScrollView(.horizontal,showsIndicators: false){
-                        LazyHStack(spacing:10){
-                            ForEach(homeVM.bestArr,id: \.id){pObj in
-                                ProductCellView(pObj: pObj,didAddCart: {
-                                    CartViewModel.shared.serviceCallAddToCart(prodId: pObj.prodId, qty: 1) { isDone, message in
-                                        self.homeVM.showError = true
-                                        self.homeVM.errorMessage = message
-                                    }
-                                })
+                    if homeVM.bestArr.count > 0 {
+                        HStack {
+                            SectionTitleView(title: "Best Selling"){
+                                
+                            }.padding(.horizontal,10)
+                            
+                            NavigationLink{
+                                BestSellingView()
+                            }label: {
+                                Text("See All")
+                                    .font(.customfont(.semibold, fontSize: 16))
+                                    .foregroundStyle(Color.primaryApp)
+                                    .frame(height:40)
+                                    .padding(.trailing,25)
                             }
-                        }.padding(.horizontal,25)
+                            
+                        }
+                        ScrollView(.horizontal,showsIndicators: false){
+                            LazyHStack(spacing:10){
+                                ForEach(homeVM.bestArr,id: \.id){pObj in
+                                    ProductCellView(pObj: pObj,didAddCart: {
+                                        CartViewModel.shared.serviceCallAddToCart(prodId: pObj.prodId, qty: 1) { isDone, message in
+                                            self.homeVM.showError = true
+                                            self.homeVM.errorMessage = message
+                                        }
+                                    })
+                                }
+                            }.padding(.horizontal,25)
+                        }
                     }
-                    
                     // MARK: Groceries
-                    SectionTitleView(title: "Groceries",titleall: "See All"){
+                    HStack {
+                        SectionTitleView(title: "Groceries"){
+                            
+                        }.padding(.horizontal,10)
                         
-                    }.padding(.horizontal,10)
+                        NavigationLink{
+                            BestSellingView()
+                        }label: {
+                            Text("See All")
+                                .font(.customfont(.semibold, fontSize: 16))
+                                .foregroundStyle(Color.primaryApp)
+                                .frame(height:40)
+                                .padding(.trailing,25)
+                        }
+                    }
                     // category
                     ScrollView(.horizontal,showsIndicators: false){
                         LazyHStack(spacing:10){
@@ -172,11 +211,15 @@ struct HomeView: View {
                 }
                 .padding(.top,.topInsets)
             }
-        }.alert(isPresented: $homeVM.showError, content: {
+        }
+        .alert(isPresented: $homeVM.showError, content: {
             Alert(title: Text(Globs.AppName), message: Text(homeVM.errorMessage), dismissButton: .default(Text("OK")) )
         })
+        .navigationTitle("")
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
         .ignoresSafeArea()
-         .padding(.bottom,.bottomInsets+25)
+        .padding(.bottom,.bottomInsets+25)
     }
 }
 
