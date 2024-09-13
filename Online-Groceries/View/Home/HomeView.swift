@@ -99,6 +99,7 @@ struct HomeView: View {
                     }
                     
                     ImageSliderViews()
+                        .padding(.bottom,-40)
                         .padding(.bottom,homeVM.offerArr.count == 0 ? -30 : 0)
                     // MARK: Exclusive offer
                     if homeVM.offerArr.count > 0 {
@@ -106,17 +107,15 @@ struct HomeView: View {
                             SectionTitleView(title: "Exclusive offer"){
                                 
                             }.padding(.horizontal,10)
-                                .padding(.vertical,-40)
                             
                             NavigationLink{
-                                BestSellingView()
+                                ExclusiveOfferView()
                             }label: {
                                 Text("See All")
                                     .font(.customfont(.semibold, fontSize: 16))
                                     .foregroundStyle(Color.primaryApp)
                                     .frame(height:40)
                                     .padding(.trailing,25)
-                                    .padding(.vertical,-40)
                             }
                         }
                         ScrollView(.horizontal,showsIndicators: false){
@@ -170,7 +169,7 @@ struct HomeView: View {
                         }.padding(.horizontal,10)
                         
                         NavigationLink{
-                            BestSellingView()
+                            GroceriesView()
                         }label: {
                             Text("See All")
                                 .font(.customfont(.semibold, fontSize: 16))
@@ -180,21 +179,21 @@ struct HomeView: View {
                         }
                     }
                     // category
-                    ScrollView(.horizontal,showsIndicators: false){
-                        LazyHStack(spacing:10){
-                            
-                            ForEach(homeVM.typeArr,id: \.id){
-                                tObj in
-                                
-                                CategoryCellView(tObj: tObj){
-                                    
-                                }
-                                
-                            }
-                            
-                            
-                        }.padding(.horizontal,25)
-                    }
+//                     ScrollView(.horizontal,showsIndicators: false){
+//                        LazyHStack(spacing:10){
+//                            
+//                            ForEach(homeVM.typeArr,id: \.id){
+//                                tObj in
+//                                
+//                                CategoryCellView(tObj: tObj){
+//                                    
+//                                }
+//                                
+//                            }
+//                            
+//                            
+//                        }.padding(.horizontal,25)
+                    //}
                     // product
                     ScrollView(.horizontal,showsIndicators: false){
                         LazyHStack(spacing:10){

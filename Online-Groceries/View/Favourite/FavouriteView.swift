@@ -13,19 +13,25 @@ struct FavouriteView: View {
     @StateObject var cartVM = CartViewModel.shared
     var body: some View {
         ZStack{
-            ScrollView{
-                LazyVStack{
-                    ForEach(favVM.listArr,id:\.id){ fObj in
-                        FavouriteRowView(fObj: fObj,detailVM:ProductDetailViewModel(prodObj:fObj)) {
-                            cartVM.serviceCallAddToCart(prodId: fObj.prodId, qty: 1) { isDone, message in
-                                self.favVM.showError = true
-                                self.favVM.errorMessage = message
+            if favVM.listArr.count != 0{
+                ScrollView{
+                    LazyVStack{
+                        ForEach(favVM.listArr,id:\.id){ fObj in
+                            FavouriteRowView(fObj: fObj,detailVM:ProductDetailViewModel(prodObj:fObj)) {
+                                cartVM.serviceCallAddToCart(prodId: fObj.prodId, qty: 1) { isDone, message in
+                                    self.favVM.showError = true
+                                    self.favVM.errorMessage = message
+                                }
                             }
                         }
-                    }
-                }.padding(20)
-            }.padding(.top,.topInsets+30)
-            .padding(.bottom,.bottomInsets)
+                    }.padding(20)
+                }.padding(.top,.topInsets+30)
+                    .padding(.bottom,.bottomInsets)
+            }
+            else{
+                Text("You have no favourites")
+                    .font(.customfont(.medium, fontSize: 24))
+            }
             VStack{
                 HStack{
                     Spacer()

@@ -139,6 +139,7 @@ struct ExploreItemView: View {
                         }
                     }
                 }.padding(.top,10)
+                .padding(.bottom,20)
                Spacer()
            }
         }
